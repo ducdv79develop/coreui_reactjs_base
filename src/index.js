@@ -1,14 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+// import App
+import App from "./App";
+
+// Soft CoreUI Context Provider
+import { CoreUIControllerProvider } from "./cores/contexts";
+
+// react-perfect-scrollbar component
+import PerfectScrollbar from "react-perfect-scrollbar";
+import "react-perfect-scrollbar/dist/css/styles.css";
+
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const container = document.getElementById("root");
+const root = createRoot(container);
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+    <CoreUIControllerProvider>
+      <PerfectScrollbar>
+        <App />
+      </PerfectScrollbar>
+    </CoreUIControllerProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
