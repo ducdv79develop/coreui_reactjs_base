@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
@@ -23,23 +8,23 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "./components/ArgonBox";
-import ArgonTypography from "./components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 // CoreUI Dashboard 2 MUI example components
-import DashboardLayout from "./layouts/LayoutContainers/DashboardLayout";
-import Footer from "./layouts/Footer";
-import ProfileInfoCard from "./layouts/Cards/InfoCards/ProfileInfoCard";
-import ProfilesList from "./layouts/Lists/ProfilesList";
-import DefaultProjectCard from "./layouts/Cards/ProjectCards/DefaultProjectCard";
-import PlaceholderCard from "./layouts/Cards/PlaceholderCard";
+import DashboardLayout from "layouts/LayoutContainers/DashboardLayout";
+import Footer from "layouts/Footer";
+import ProfileInfoCard from "layouts/Cards/InfoCards/ProfileInfoCard";
+import ProfilesList from "layouts/Lists/ProfilesList";
+import DefaultProjectCard from "layouts/Cards/ProjectCards/DefaultProjectCard";
+import PlaceholderCard from "layouts/Cards/PlaceholderCard";
 
 // Overview page components
-import Header from "layouts/profile/components/Header";
-import PlatformSettings from "layouts/profile/components/PlatformSettings";
+import Header from "views/profile/components/Header";
+import PlatformSettings from "views/profile/components/PlatformSettings";
 
 // Data
-import profilesListData from "layouts/profile/data/profilesListData";
+import profilesListData from "views/profile/data/profilesListData";
 
 // Images
 import homeDecor1 from "assets/images/home-decor-1.jpg";
@@ -50,7 +35,7 @@ import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 const bgImage =
-  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/profile-layout-header.jpg";
+  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/CoreUI-dashboard-pro/assets/img/profile-layout-header.jpg";
 
 function Overview() {
   return (
@@ -65,7 +50,7 @@ function Overview() {
       }}
     >
       <Header />
-      <ArgonBox mt={5} mb={3}>
+      <CoreUIBox mt={5} mb={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6} xl={4}>
             <PlatformSettings />
@@ -104,22 +89,22 @@ function Overview() {
             <ProfilesList title="conversations" profiles={profilesListData} />
           </Grid>
         </Grid>
-      </ArgonBox>
-      <ArgonBox mb={3}>
+      </CoreUIBox>
+      <CoreUIBox mb={3}>
         <Card>
-          <ArgonBox pt={2} px={2}>
-            <ArgonBox mb={0.5}>
-              <ArgonTypography variant="h6" fontWeight="medium">
+          <CoreUIBox pt={2} px={2}>
+            <CoreUIBox mb={0.5}>
+              <CoreUITypography variant="h6" fontWeight="medium">
                 Projects
-              </ArgonTypography>
-            </ArgonBox>
-            <ArgonBox mb={1}>
-              <ArgonTypography variant="button" fontWeight="regular" color="text">
+              </CoreUITypography>
+            </CoreUIBox>
+            <CoreUIBox mb={1}>
+              <CoreUITypography variant="button" fontWeight="regular" color="text">
                 Architects design houses
-              </ArgonTypography>
-            </ArgonBox>
-          </ArgonBox>
-          <ArgonBox p={2}>
+              </CoreUITypography>
+            </CoreUIBox>
+          </CoreUIBox>
+          <CoreUIBox p={2}>
             <Grid container spacing={3}>
               <Grid item xs={12} md={6} xl={3}>
                 <DefaultProjectCard
@@ -185,9 +170,9 @@ function Overview() {
                 <PlaceholderCard title={{ variant: "h5", text: "New project" }} outlined />
               </Grid>
             </Grid>
-          </ArgonBox>
+          </CoreUIBox>
         </Card>
-      </ArgonBox>
+      </CoreUIBox>
 
       <Footer />
     </DashboardLayout>

@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState } from "react";
 
 // prop-types is a library for typechecking of props
@@ -27,14 +12,14 @@ import MuiLink from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 // CoreUI Dashboard 2 MUI exampless
-import DefaultNavbarDropdown from "./layouts/Navbars/DefaultNavbar/DefaultNavbarDropdown";
+import DefaultNavbarDropdown from "layouts/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 
 // CoreUI Dashboard 2 PRO React contexts
-import { useCoreUIController } from "../../cores/contexts";
+import { useCoreUIController } from "cores/contexts";
 
 function DefaultNavbarMobile({ routes, open }) {
   const [collapse, setCollapse] = useState("");
@@ -55,15 +40,15 @@ function DefaultNavbarMobile({ routes, open }) {
         route={route}
         collapse={Boolean(navCollapse)}
       >
-        <ArgonBox sx={{ height: "15rem", maxHeight: "15rem", overflowY: "scroll" }}>
+        <CoreUIBox sx={{ height: "15rem", maxHeight: "15rem", overflowY: "scroll" }}>
           {routeCollapses &&
             routeCollapses.map((item) => (
-              <ArgonBox key={item.name} px={item.icon ? 1 : 2}>
+              <CoreUIBox key={item.name} px={item.icon ? 1 : 2}>
                 {item.collapse ? (
                   <>
-                    <ArgonBox width="100%" display="flex" alignItems="center" p={1}>
+                    <CoreUIBox width="100%" display="flex" alignItems="center" p={1}>
                       {item.icon && (
-                        <ArgonBox
+                        <CoreUIBox
                           display="flex"
                           justifyContent="center"
                           alignItems="center"
@@ -76,19 +61,19 @@ function DefaultNavbarMobile({ routes, open }) {
                           lineHeight={1}
                         >
                           {typeof item.icon === "string" ? <Icon>{item.icon}</Icon> : item.icon}
-                        </ArgonBox>
+                        </CoreUIBox>
                       )}
-                      <ArgonTypography
+                      <CoreUITypography
                         display="block"
                         variant="button"
                         fontWeight="bold"
                         textTransform="capitalize"
                       >
                         {item.name}
-                      </ArgonTypography>
-                    </ArgonBox>
+                      </CoreUITypography>
+                    </CoreUIBox>
                     {item.collapse.map((el, index) => (
-                      <ArgonTypography
+                      <CoreUITypography
                         key={el.name}
                         component={el.route ? Link : MuiLink}
                         to={el.route ? el.route : ""}
@@ -120,11 +105,11 @@ function DefaultNavbarMobile({ routes, open }) {
                         })}
                       >
                         {el.name}
-                      </ArgonTypography>
+                      </CoreUITypography>
                     ))}
                   </>
                 ) : (
-                  <ArgonBox
+                  <CoreUIBox
                     key={item.key}
                     display="flex"
                     component={item.route ? Link : MuiLink}
@@ -149,7 +134,7 @@ function DefaultNavbarMobile({ routes, open }) {
                       },
                     })}
                   >
-                    <ArgonBox
+                    <CoreUIBox
                       display="flex"
                       justifyContent="center"
                       alignItems="center"
@@ -162,9 +147,9 @@ function DefaultNavbarMobile({ routes, open }) {
                       lineHeight={1}
                     >
                       {typeof item.icon === "string" ? <Icon>{item.icon}</Icon> : item.icon}
-                    </ArgonBox>
-                    <ArgonBox>
-                      <ArgonTypography
+                    </CoreUIBox>
+                    <CoreUIBox>
+                      <CoreUITypography
                         display="block"
                         variant="button"
                         fontWeight={!item.description ? "regular" : "bold"}
@@ -172,9 +157,9 @@ function DefaultNavbarMobile({ routes, open }) {
                         textTransform="capitalize"
                       >
                         {item.name || "&nbsp"}
-                      </ArgonTypography>
+                      </CoreUITypography>
                       {item.description && (
-                        <ArgonTypography
+                        <CoreUITypography
                           display="block"
                           variant="button"
                           color="text"
@@ -182,23 +167,23 @@ function DefaultNavbarMobile({ routes, open }) {
                           sx={{ transition: "all 300ms linear" }}
                         >
                           {item.description}
-                        </ArgonTypography>
+                        </CoreUITypography>
                       )}
-                    </ArgonBox>
-                  </ArgonBox>
+                    </CoreUIBox>
+                  </CoreUIBox>
                 )}
-              </ArgonBox>
+              </CoreUIBox>
             ))}
-        </ArgonBox>
+        </CoreUIBox>
       </DefaultNavbarDropdown>
     )
   );
 
   return (
     <Collapse in={Boolean(open)} timeout="auto" unmountOnExit>
-      <ArgonBox width="calc(100% + 1.625rem)" my={2} ml={-2}>
+      <CoreUIBox width="calc(100% + 1.625rem)" my={2} ml={-2}>
         {renderNavbarItems}
-      </ArgonBox>
+      </CoreUIBox>
     </Collapse>
   );
 }

@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -22,11 +7,11 @@ import Grid from "@mui/material/Grid";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../../../components/ArgonBox";
-import ArgonTypography from "../../../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 // CoreUI Dashboard 2 MUI contexts
-import { useCoreUIController } from "../../cores/contexts";
+import { useCoreUIController } from "cores/contexts";
 
 function MiniStatisticsCard({ bgColor, title, count, percentage, icon, direction }) {
   const [controller] = useCoreUIController();
@@ -34,12 +19,12 @@ function MiniStatisticsCard({ bgColor, title, count, percentage, icon, direction
 
   return (
     <Card>
-      <ArgonBox bgColor={bgColor === "white" && darkMode ? "transparent" : bgColor}>
-        <ArgonBox p={2}>
+      <CoreUIBox bgColor={bgColor === "white" && darkMode ? "transparent" : bgColor}>
+        <CoreUIBox p={2}>
           <Grid container alignItems="center">
             {direction === "left" ? (
               <Grid item>
-                <ArgonBox
+                <CoreUIBox
                   bgColor={bgColor === "white" ? icon.color : "white"}
                   color={bgColor === "white" ? "white" : "dark"}
                   width="3rem"
@@ -53,12 +38,12 @@ function MiniStatisticsCard({ bgColor, title, count, percentage, icon, direction
                   <Icon fontSize="small" color="inherit">
                     {icon.component}
                   </Icon>
-                </ArgonBox>
+                </CoreUIBox>
               </Grid>
             ) : null}
             <Grid item xs={8}>
-              <ArgonBox ml={direction === "left" ? 2 : 0} lineHeight={1}>
-                <ArgonTypography
+              <CoreUIBox ml={direction === "left" ? 2 : 0} lineHeight={1}>
+                <CoreUITypography
                   variant="button"
                   color={bgColor === "white" ? "text" : "white"}
                   opacity={bgColor === "white" ? 1 : 0.7}
@@ -66,22 +51,22 @@ function MiniStatisticsCard({ bgColor, title, count, percentage, icon, direction
                   fontWeight={title.fontWeight}
                 >
                   {title.text}
-                </ArgonTypography>
-                <ArgonTypography
+                </CoreUITypography>
+                <CoreUITypography
                   variant="h5"
                   fontWeight="bold"
                   color={bgColor === "white" ? "dark" : "white"}
                 >
                   {count}{" "}
-                  <ArgonTypography variant="button" color={percentage.color} fontWeight="bold">
+                  <CoreUITypography variant="button" color={percentage.color} fontWeight="bold">
                     {percentage.text}
-                  </ArgonTypography>
-                </ArgonTypography>
-              </ArgonBox>
+                  </CoreUITypography>
+                </CoreUITypography>
+              </CoreUIBox>
             </Grid>
             {direction === "right" ? (
               <Grid item xs={4}>
-                <ArgonBox
+                <CoreUIBox
                   bgColor={bgColor === "white" ? icon.color : "white"}
                   color={bgColor === "white" ? "white" : "dark"}
                   width="3rem"
@@ -96,12 +81,12 @@ function MiniStatisticsCard({ bgColor, title, count, percentage, icon, direction
                   <Icon fontSize="small" color="inherit">
                     {icon.component}
                   </Icon>
-                </ArgonBox>
+                </CoreUIBox>
               </Grid>
             ) : null}
           </Grid>
-        </ArgonBox>
-      </ArgonBox>
+        </CoreUIBox>
+      </CoreUIBox>
     </Card>
   );
 }

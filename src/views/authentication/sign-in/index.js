@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState } from "react";
 
 // react-router-dom components
@@ -22,17 +7,17 @@ import { Link } from "react-router-dom";
 import Switch from "@mui/material/Switch";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "./components/ArgonBox";
-import ArgonTypography from "./components/ArgonTypography";
-import ArgonInput from "./components/ArgonInput";
-import ArgonButton from "./components/ArgonButton";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
+import CoreUIInput from "components/CoreUIInput";
+import CoreUIButton from "components/CoreUIButton";
 
 // Authentication layout components
-import IllustrationLayout from "layouts/authentication/components/IllustrationLayout";
+import IllustrationLayout from "views/authentication/components/IllustrationLayout";
 
 // Image
 const bgImage =
-  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg";
+  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/CoreUI-dashboard-pro/assets/img/signin-ill.jpg";
 
 function Illustration() {
   const [rememberMe, setRememberMe] = useState(false);
@@ -50,33 +35,33 @@ function Illustration() {
           "The more effortless the writing looks, the more effort the writer actually put into the process.",
       }}
     >
-      <ArgonBox component="form" role="form">
-        <ArgonBox mb={2}>
-          <ArgonInput type="email" placeholder="Email" size="large" />
-        </ArgonBox>
-        <ArgonBox mb={2}>
-          <ArgonInput type="password" placeholder="Password" size="large" />
-        </ArgonBox>
-        <ArgonBox display="flex" alignItems="center">
+      <CoreUIBox component="form" role="form">
+        <CoreUIBox mb={2}>
+          <CoreUIInput type="email" placeholder="Email" size="large" />
+        </CoreUIBox>
+        <CoreUIBox mb={2}>
+          <CoreUIInput type="password" placeholder="Password" size="large" />
+        </CoreUIBox>
+        <CoreUIBox display="flex" alignItems="center">
           <Switch checked={rememberMe} onChange={handleSetRememberMe} />
-          <ArgonTypography
+          <CoreUITypography
             variant="button"
             fontWeight="regular"
             onClick={handleSetRememberMe}
             sx={{ cursor: "pointer", userSelect: "none" }}
           >
             &nbsp;&nbsp;Remember me
-          </ArgonTypography>
-        </ArgonBox>
-        <ArgonBox mt={4} mb={1}>
-          <ArgonButton color="info" size="large" fullWidth>
+          </CoreUITypography>
+        </CoreUIBox>
+        <CoreUIBox mt={4} mb={1}>
+          <CoreUIButton color="info" size="large" fullWidth>
             Sign In
-          </ArgonButton>
-        </ArgonBox>
-        <ArgonBox mt={3} textAlign="center">
-          <ArgonTypography variant="button" color="text" fontWeight="regular">
+          </CoreUIButton>
+        </CoreUIBox>
+        <CoreUIBox mt={3} textAlign="center">
+          <CoreUITypography variant="button" color="text" fontWeight="regular">
             Don&apos;t have an account?{" "}
-            <ArgonTypography
+            <CoreUITypography
               component={Link}
               to="/authentication/sign-up"
               variant="button"
@@ -84,10 +69,10 @@ function Illustration() {
               fontWeight="medium"
             >
               Sign up
-            </ArgonTypography>
-          </ArgonTypography>
-        </ArgonBox>
-      </ArgonBox>
+            </CoreUITypography>
+          </CoreUITypography>
+        </CoreUIBox>
+      </CoreUIBox>
     </IllustrationLayout>
   );
 }

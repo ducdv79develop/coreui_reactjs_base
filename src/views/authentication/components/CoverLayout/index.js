@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -20,32 +5,32 @@ import PropTypes from "prop-types";
 import Grid from "@mui/material/Grid";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "./components/ArgonBox";
-import ArgonTypography from "./components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 // CoreUI Dashboard 2 MUI example components
-import DefaultNavbar from "./layouts/Navbars/DefaultNavbar";
-import PageLayout from "./layouts/LayoutContainers/PageLayout";
+import DefaultNavbar from "layouts/Navbars/DefaultNavbar";
+import PageLayout from "layouts/LayoutContainers/PageLayout";
 
 // Authentication layout components
-import Footer from "layouts/authentication/components/Footer";
+import Footer from "views/authentication/components/Footer";
 
 function CoverLayout({ title, description, image, imgPosition, button, children }) {
   return (
     <PageLayout>
-      <ArgonBox mt={1}>
+      <CoreUIBox mt={1}>
         <DefaultNavbar
           action={{
             type: "external",
-            route: "https://creative-tim.com/product/argon-dashboard-material-ui",
+            route: "https://creative-tim.com/product/CoreUI-dashboard-material-ui",
             label: "Free Download",
             ...button,
           }}
           transparent
           light
         />
-      </ArgonBox>
-      <ArgonBox
+      </CoreUIBox>
+      <CoreUIBox
         width="calc(100% - 2rem)"
         minHeight="50vh"
         borderRadius="lg"
@@ -68,26 +53,26 @@ function CoverLayout({ title, description, image, imgPosition, button, children 
       >
         <Grid container spacing={3} justifyContent="center" sx={{ textAlign: "center" }}>
           <Grid item xs={10} lg={4}>
-            <ArgonBox mb={1}>
-              <ArgonTypography variant="h1" color="white" fontWeight="bold">
+            <CoreUIBox mb={1}>
+              <CoreUITypography variant="h1" color="white" fontWeight="bold">
                 {title}
-              </ArgonTypography>
-            </ArgonBox>
-            <ArgonBox mb={2}>
-              <ArgonTypography variant="body2" color="white" fontWeight="regular">
+              </CoreUITypography>
+            </CoreUIBox>
+            <CoreUIBox mb={2}>
+              <CoreUITypography variant="body2" color="white" fontWeight="regular">
                 {description}
-              </ArgonTypography>
-            </ArgonBox>
+              </CoreUITypography>
+            </CoreUIBox>
           </Grid>
         </Grid>
-      </ArgonBox>
-      <ArgonBox mt={{ xs: -26, lg: -24 }} px={1} width="calc(100% - 2rem)" mx="auto">
+      </CoreUIBox>
+      <CoreUIBox mt={{ xs: -26, lg: -24 }} px={1} width="calc(100% - 2rem)" mx="auto">
         <Grid container justifyContent="center">
           <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
             {children}
           </Grid>
         </Grid>
-      </ArgonBox>
+      </CoreUIBox>
       <Footer />
     </PageLayout>
   );

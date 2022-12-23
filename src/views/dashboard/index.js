@@ -1,53 +1,38 @@
 /* eslint-disable no-unused-vars */
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "./components/ArgonBox";
-import ArgonTypography from "./components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 // CoreUI Dashboard 2 MUI example components
-import DashboardLayout from "./layouts/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "./layouts/Navbars/DashboardNavbar";
-import Footer from "./layouts/Footer";
-import DetailedStatisticsCard from "./layouts/Cards/StatisticsCards/DetailedStatisticsCard";
-import SalesTable from "./layouts/Tables/SalesTable";
-import CategoriesList from "./layouts/Lists/CategoriesList";
-import GradientLineChart from "./layouts/Charts/LineCharts/GradientLineChart";
+import DashboardLayout from "layouts/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "layouts/Navbars/DashboardNavbar";
+import Footer from "layouts/Footer";
+import DetailedStatisticsCard from "layouts/Cards/StatisticsCards/DetailedStatisticsCard";
+import SalesTable from "layouts/Tables/SalesTable";
+import CategoriesList from "layouts/Lists/CategoriesList";
+import GradientLineChart from "layouts/Charts/LineCharts/GradientLineChart";
 
 // CoreUI Dashboard 2 MUI base styles
 import typography from "assets/theme/base/typography";
 
 // Dashboard layout components
-import Slider from "layouts/dashboard/components/Slider";
+import Slider from "views/dashboard/components/Slider";
 
 // Data
-import gradientLineChartData from "layouts/dashboard/data/gradientLineChartData";
-import salesTableData from "layouts/dashboard/data/salesTableData";
-import categoriesListData from "layouts/dashboard/data/categoriesListData";
+import gradientLineChartData from "views/dashboard/data/gradientLineChartData";
+import salesTableData from "views/dashboard/data/salesTableData";
+import categoriesListData from "views/dashboard/data/categoriesListData";
 
 function Default() {
   const { size } = typography;
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <ArgonBox py={3}>
+      <CoreUIBox py={3}>
         <Grid container spacing={3} mb={3}>
           <Grid item xs={12} md={6} lg={3}>
             <DetailedStatisticsCard
@@ -87,17 +72,17 @@ function Default() {
             <GradientLineChart
               title="Sales Overview"
               description={
-                <ArgonBox display="flex" alignItems="center">
-                  <ArgonBox fontSize={size.lg} color="success" mb={0.3} mr={0.5} lineHeight={0}>
+                <CoreUIBox display="flex" alignItems="center">
+                  <CoreUIBox fontSize={size.lg} color="success" mb={0.3} mr={0.5} lineHeight={0}>
                     <Icon sx={{ fontWeight: "bold" }}>arrow_upward</Icon>
-                  </ArgonBox>
-                  <ArgonTypography variant="button" color="text" fontWeight="medium">
+                  </CoreUIBox>
+                  <CoreUITypography variant="button" color="text" fontWeight="medium">
                     4% more{" "}
-                    <ArgonTypography variant="button" color="text" fontWeight="regular">
+                    <CoreUITypography variant="button" color="text" fontWeight="regular">
                       in 2022
-                    </ArgonTypography>
-                  </ArgonTypography>
-                </ArgonBox>
+                    </CoreUITypography>
+                  </CoreUITypography>
+                </CoreUIBox>
               }
               chart={gradientLineChartData}
             />
@@ -114,7 +99,7 @@ function Default() {
             <CategoriesList title="categories" categories={categoriesListData} />
           </Grid>
         </Grid>
-      </ArgonBox>
+      </CoreUIBox>
       <Footer />
     </DashboardLayout>
   );

@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -21,8 +6,8 @@ import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../../../components/ArgonBox";
-import ArgonTypography from "../../../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 function PlaceholderCard({ icon, title, hasBorder, outlined }) {
   return (
@@ -35,7 +20,7 @@ function PlaceholderCard({ icon, title, hasBorder, outlined }) {
         border: hasBorder || outlined ? `${borderWidth[1]} solid ${borderColor}` : "none",
       })}
     >
-      <ArgonBox
+      <CoreUIBox
         display="flex"
         flexDirection="column"
         justifyContent="center"
@@ -43,15 +28,15 @@ function PlaceholderCard({ icon, title, hasBorder, outlined }) {
         height="100%"
         p={3}
       >
-        <ArgonBox color="secondary" mb={0.5}>
+        <CoreUIBox color="secondary" mb={0.5}>
           <Icon fontSize="default" sx={{ fontWeight: "bold" }}>
             {icon}
           </Icon>
-        </ArgonBox>
-        <ArgonTypography variant={title.variant} color="secondary">
+        </CoreUIBox>
+        <CoreUITypography variant={title.variant} color="secondary">
           {title.text}
-        </ArgonTypography>
-      </ArgonBox>
+        </CoreUITypography>
+      </CoreUIBox>
     </Card>
   );
 }

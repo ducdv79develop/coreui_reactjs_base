@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState, useEffect } from "react";
 
 // react-router components
@@ -29,13 +14,13 @@ import Menu from "@mui/material/Menu";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
-import ArgonInput from "../../components/ArgonInput";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
+import CoreUIInput from "components/CoreUIInput";
 
 // CoreUI Dashboard 2 MUI example components
-import Breadcrumbs from "./layouts/Breadcrumbs";
-import NotificationItem from "./layouts/Items/NotificationItem";
+import Breadcrumbs from "layouts/Breadcrumbs";
+import NotificationItem from "layouts/Items/NotificationItem";
 
 // Custom styles for DashboardNavbar
 import {
@@ -45,7 +30,7 @@ import {
   navbarIconButton,
   navbarDesktopMenu,
   navbarMobileMenu,
-} from "./layouts/Navbars/DashboardNavbar/styles";
+} from "layouts/Navbars/DashboardNavbar/styles";
 
 // CoreUI Dashboard 2 MUI context
 import {
@@ -53,7 +38,7 @@ import {
   setTransparentNavbar,
   setMiniSidenav,
   setOpenConfigurator,
-} from "../../cores/contexts";
+} from "cores/contexts";
 
 // Images
 import team2 from "assets/images/team-2.jpg";
@@ -143,7 +128,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
       sx={(theme) => navbar(theme, { transparentNavbar, absolute, light })}
     >
       <Toolbar sx={(theme) => navbarContainer(theme, { navbarType })}>
-        <ArgonBox
+        <CoreUIBox
           color={light && transparentNavbar ? "white" : "dark"}
           mb={{ xs: 1, md: 0 }}
           sx={(theme) => navbarRow(theme, { isMini })}
@@ -157,11 +142,11 @@ function DashboardNavbar({ absolute, light, isMini }) {
           <Icon fontSize="medium" sx={navbarDesktopMenu} onClick={handleMiniSidenav}>
             {miniSidenav ? "menu_open" : "menu"}
           </Icon>
-        </ArgonBox>
+        </CoreUIBox>
         {isMini ? null : (
-          <ArgonBox sx={(theme) => navbarRow(theme, { isMini })}>
-            <ArgonBox pr={1}>
-              <ArgonInput
+          <CoreUIBox sx={(theme) => navbarRow(theme, { isMini })}>
+            <CoreUIBox pr={1}>
+              <CoreUIInput
                 placeholder="Type here..."
                 startAdornment={
                   <Icon fontSize="small" style={{ marginRight: "6px" }}>
@@ -169,8 +154,8 @@ function DashboardNavbar({ absolute, light, isMini }) {
                   </Icon>
                 }
               />
-            </ArgonBox>
-            <ArgonBox color={light ? "white" : "inherit"}>
+            </CoreUIBox>
+            <CoreUIBox color={light ? "white" : "inherit"}>
               <Link to="/authentication/sign-in/basic">
                 <IconButton sx={navbarIconButton} size="small">
                   <Icon
@@ -180,13 +165,13 @@ function DashboardNavbar({ absolute, light, isMini }) {
                   >
                     account_circle
                   </Icon>
-                  <ArgonTypography
+                  <CoreUITypography
                     variant="button"
                     fontWeight="medium"
                     color={light && transparentNavbar ? "white" : "dark"}
                   >
                     Sign in
-                  </ArgonTypography>
+                  </CoreUITypography>
                 </IconButton>
               </Link>
               <IconButton
@@ -217,8 +202,8 @@ function DashboardNavbar({ absolute, light, isMini }) {
                 <Icon>notifications</Icon>
               </IconButton>
               {renderMenu()}
-            </ArgonBox>
-          </ArgonBox>
+            </CoreUIBox>
+          </CoreUIBox>
         )}
       </Toolbar>
     </AppBar>

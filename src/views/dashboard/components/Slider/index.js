@@ -13,8 +13,8 @@ import "swiper/swiper-bundle.min.css";
 import Card from "@mui/material/Card";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "./components/ArgonBox";
-import ArgonTypography from "./components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 // Images
 import bg1 from "assets/images/img-2.jpg";
@@ -47,7 +47,7 @@ function Slider() {
         loop
         style={{ height: "100%" }}
       >
-        <ArgonBox
+        <CoreUIBox
           display="flex"
           alignItems="center"
           position="absolute"
@@ -55,7 +55,7 @@ function Slider() {
           right={12}
           zIndex={5}
         >
-          <ArgonBox
+          <CoreUIBox
             width="3.25rem"
             height="3.25rem"
             color="white"
@@ -72,8 +72,8 @@ function Slider() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
-          </ArgonBox>
-          <ArgonBox
+          </CoreUIBox>
+          <CoreUIBox
             width="3.25rem"
             height="3.25rem"
             color="white"
@@ -90,10 +90,10 @@ function Slider() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
-          </ArgonBox>
-        </ArgonBox>
+          </CoreUIBox>
+        </CoreUIBox>
         <SwiperSlide>
-          <ArgonBox
+          <CoreUIBox
             sx={{
               position: "relative",
               backgroundImage: `url(${bg1})`,
@@ -101,8 +101,8 @@ function Slider() {
               height: "100%",
             }}
           >
-            <ArgonBox position="absolute" bottom={16} ml={6} py={2.5} textAlign="left" width="80%">
-              <ArgonBox
+            <CoreUIBox position="absolute" bottom={16} ml={6} py={2.5} textAlign="left" width="80%">
+              <CoreUIBox
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
@@ -113,22 +113,22 @@ function Slider() {
                 textAlign="center"
                 mb={2}
               >
-                <ArgonTypography variant="caption" color="dark" lineHeight={0}>
-                  <ArgonBox component="i" color="dark" className="ni ni-camera-compact" />
-                </ArgonTypography>
-              </ArgonBox>
-              <ArgonTypography variant="h5" color="white" mb={0.5}>
-                Get started with Argon
-              </ArgonTypography>
-              <ArgonTypography variant="body2" color="white">
+                <CoreUITypography variant="caption" color="dark" lineHeight={0}>
+                  <CoreUIBox component="i" color="dark" className="ni ni-camera-compact" />
+                </CoreUITypography>
+              </CoreUIBox>
+              <CoreUITypography variant="h5" color="white" mb={0.5}>
+                Get started with CoreUI
+              </CoreUITypography>
+              <CoreUITypography variant="body2" color="white">
                 There&apos;s nothing I really wanted to do in life that I wasn&apos;t able to get
                 good at.
-              </ArgonTypography>
-            </ArgonBox>
-          </ArgonBox>
+              </CoreUITypography>
+            </CoreUIBox>
+          </CoreUIBox>
         </SwiperSlide>
         <SwiperSlide>
-          <ArgonBox
+          <CoreUIBox
             sx={{
               position: "relative",
               backgroundImage: `url(${bg2})`,
@@ -136,8 +136,8 @@ function Slider() {
               height: "100%",
             }}
           >
-            <ArgonBox position="absolute" bottom={16} ml={6} py={2.5} textAlign="left" width="80%">
-              <ArgonBox
+            <CoreUIBox position="absolute" bottom={16} ml={6} py={2.5} textAlign="left" width="80%">
+              <CoreUIBox
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
@@ -148,22 +148,22 @@ function Slider() {
                 textAlign="center"
                 mb={2}
               >
-                <ArgonTypography variant="caption" lineHeight={0}>
-                  <ArgonBox component="i" color="dark" className="ni ni-bulb-61" />
-                </ArgonTypography>
-              </ArgonBox>
-              <ArgonTypography variant="h5" color="white" mb={0.5}>
+                <CoreUITypography variant="caption" lineHeight={0}>
+                  <CoreUIBox component="i" color="dark" className="ni ni-bulb-61" />
+                </CoreUITypography>
+              </CoreUIBox>
+              <CoreUITypography variant="h5" color="white" mb={0.5}>
                 Faster way to create web pages
-              </ArgonTypography>
-              <ArgonTypography variant="body2" color="white">
+              </CoreUITypography>
+              <CoreUITypography variant="body2" color="white">
                 That&apos;s my skill. I&apos;m not really specifically talented at anything except
                 for the ability to learn.
-              </ArgonTypography>
-            </ArgonBox>
-          </ArgonBox>
+              </CoreUITypography>
+            </CoreUIBox>
+          </CoreUIBox>
         </SwiperSlide>
         <SwiperSlide>
-          <ArgonBox
+          <CoreUIBox
             sx={{
               position: "relative",
               backgroundImage: `url(${bg3})`,
@@ -171,8 +171,8 @@ function Slider() {
               height: "100%",
             }}
           >
-            <ArgonBox position="absolute" bottom={16} ml={6} py={2.5} textAlign="left" width="80%">
-              <ArgonBox
+            <CoreUIBox position="absolute" bottom={16} ml={6} py={2.5} textAlign="left" width="80%">
+              <CoreUIBox
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
@@ -183,19 +183,19 @@ function Slider() {
                 textAlign="center"
                 mb={2}
               >
-                <ArgonTypography variant="caption" color="dark" lineHeight={0}>
-                  <ArgonBox component="i" color="dark" className="ni ni-trophy" />
-                </ArgonTypography>
-              </ArgonBox>
-              <ArgonTypography variant="h5" color="white" mb={0.5}>
+                <CoreUITypography variant="caption" color="dark" lineHeight={0}>
+                  <CoreUIBox component="i" color="dark" className="ni ni-trophy" />
+                </CoreUITypography>
+              </CoreUIBox>
+              <CoreUITypography variant="h5" color="white" mb={0.5}>
                 Share with us your design tips!
-              </ArgonTypography>
-              <ArgonTypography variant="body2" color="white">
+              </CoreUITypography>
+              <CoreUITypography variant="body2" color="white">
                 Don&apos;t be afraid to be wrong because you can&apos;t learn anything from a
                 compliment.
-              </ArgonTypography>
-            </ArgonBox>
-          </ArgonBox>
+              </CoreUITypography>
+            </CoreUIBox>
+          </CoreUIBox>
         </SwiperSlide>
       </Swiper>
     </Card>

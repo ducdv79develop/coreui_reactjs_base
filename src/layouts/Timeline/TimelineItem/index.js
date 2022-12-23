@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -20,15 +5,15 @@ import PropTypes from "prop-types";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
-import ArgonBadge from "../../components/ArgonBadge";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
+import CoreUIBadge from "components/CoreUIBadge";
 
 // Timeline context
-import { useTimeline } from "./layouts/Timeline/context";
+import { useTimeline } from "layouts/Timeline/context";
 
 // Custom styles for the TimelineItem
-import { timelineItem, timelineItemIcon } from "./layouts/Timeline/TimelineItem/styles";
+import { timelineItem, timelineItemIcon } from "layouts/Timeline/TimelineItem/styles";
 
 function TimelineItem({ color, icon, title, dateTime, description, badges, lastItem }) {
   const isDark = useTimeline();
@@ -39,16 +24,16 @@ function TimelineItem({ color, icon, title, dateTime, description, badges, lastI
           const badgeKey = `badge-${key}`;
 
           return (
-            <ArgonBox key={badgeKey} mr={key === badges.length - 1 ? 0 : 0.5}>
-              <ArgonBadge color={color} size="xs" badgeContent={badge} container />
-            </ArgonBox>
+            <CoreUIBox key={badgeKey} mr={key === badges.length - 1 ? 0 : 0.5}>
+              <CoreUIBadge color={color} size="xs" badgeContent={badge} container />
+            </CoreUIBox>
           );
         })
       : null;
 
   return (
-    <ArgonBox position="relative" sx={(theme) => timelineItem(theme, { lastItem })}>
-      <ArgonBox
+    <CoreUIBox position="relative" sx={(theme) => timelineItem(theme, { lastItem })}>
+      <CoreUIBox
         bgColor={isDark ? "dark" : "white"}
         width="1.625rem"
         height="1.625rem"
@@ -59,34 +44,34 @@ function TimelineItem({ color, icon, title, dateTime, description, badges, lastI
         zIndex={2}
       >
         <Icon sx={(theme) => timelineItemIcon(theme, { color })}>{icon}</Icon>
-      </ArgonBox>
-      <ArgonBox ml={5.75} pt={description ? 0.7 : 0.5} lineHeight={0} maxWidth="30rem">
-        <ArgonTypography variant="button" fontWeight="medium" color={isDark ? "white" : "dark"}>
+      </CoreUIBox>
+      <CoreUIBox ml={5.75} pt={description ? 0.7 : 0.5} lineHeight={0} maxWidth="30rem">
+        <CoreUITypography variant="button" fontWeight="medium" color={isDark ? "white" : "dark"}>
           {title}
-        </ArgonTypography>
-        <ArgonBox mt={0.5}>
-          <ArgonTypography
+        </CoreUITypography>
+        <CoreUIBox mt={0.5}>
+          <CoreUITypography
             variant="caption"
             fontWeight="medium"
             color={isDark ? "secondary" : "text"}
           >
             {dateTime}
-          </ArgonTypography>
-        </ArgonBox>
-        <ArgonBox mt={2} mb={1.5}>
+          </CoreUITypography>
+        </CoreUIBox>
+        <CoreUIBox mt={2} mb={1.5}>
           {description ? (
-            <ArgonTypography variant="button" fontWeight="regular" color="text">
+            <CoreUITypography variant="button" fontWeight="regular" color="text">
               {description}
-            </ArgonTypography>
+            </CoreUITypography>
           ) : null}
-        </ArgonBox>
+        </CoreUIBox>
         {badges.length > 0 ? (
-          <ArgonBox display="flex" pb={lastItem ? 1 : 2}>
+          <CoreUIBox display="flex" pb={lastItem ? 1 : 2}>
             {renderBadges}
-          </ArgonBox>
+          </CoreUIBox>
         ) : null}
-      </ArgonBox>
-    </ArgonBox>
+      </CoreUIBox>
+    </CoreUIBox>
   );
 }
 

@@ -1,19 +1,4 @@
 /* eslint-disable no-param-reassign */
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState, useEffect } from "react";
 
 // prop-types is a library for typechecking of props.
@@ -27,19 +12,19 @@ import Icon from "@mui/material/Icon";
 import Container from "@mui/material/Container";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
-import ArgonButton from "../../components/ArgonButton";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
+import CoreUIButton from "components/CoreUIButton";
 
 // CoreUI Dashboard 2 MUI examples components
-import DefaultNavbarLink from "./layouts/Navbars/DefaultNavbar/DefaultNavbarLink";
-import DefaultNavbarMobile from "./layouts/Navbars/DefaultNavbar/DefaultNavbarMobile";
+import DefaultNavbarLink from "layouts/Navbars/DefaultNavbar/DefaultNavbarLink";
+import DefaultNavbarMobile from "layouts/Navbars/DefaultNavbar/DefaultNavbarMobile";
 
 // CoreUI Dashboard 2 MUI Base Styles
 import breakpoints from "assets/theme/base/breakpoints";
 
 // Material Dashboard 2 PRO React context
-import { useCoreUIController } from "../../cores/contexts";
+import { useCoreUIController } from "cores/contexts";
 
 function DefaultNavbar({ brand, transparent, light, action }) {
   const [controller] = useCoreUIController();
@@ -77,7 +62,7 @@ function DefaultNavbar({ brand, transparent, light, action }) {
 
   return (
     <Container>
-      <ArgonBox
+      <CoreUIBox
         pt={0.75}
         pb={1}
         px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 0 : 2 }}
@@ -100,13 +85,13 @@ function DefaultNavbar({ brand, transparent, light, action }) {
           backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
         })}
       >
-        <ArgonBox display="flex" justifyContent="space-between" alignItems="center" px={2}>
-          <ArgonBox component={Link} to="/" py={transparent ? 1.5 : 0.75} lineHeight={1}>
-            <ArgonTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
+        <CoreUIBox display="flex" justifyContent="space-between" alignItems="center" px={2}>
+          <CoreUIBox component={Link} to="/" py={transparent ? 1.5 : 0.75} lineHeight={1}>
+            <CoreUITypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
               {brand}
-            </ArgonTypography>
-          </ArgonBox>
-          <ArgonBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>
+            </CoreUITypography>
+          </CoreUIBox>
+          <CoreUIBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>
             <DefaultNavbarLink
               icon="donut_large"
               name="dashboard"
@@ -126,11 +111,11 @@ function DefaultNavbar({ brand, transparent, light, action }) {
               route="/authentication/sign-in"
               light={light}
             />
-          </ArgonBox>
+          </CoreUIBox>
           {action &&
             (action.type === "internal" ? (
-              <ArgonBox display={{ xs: "none", lg: "inline-block" }}>
-                <ArgonButton
+              <CoreUIBox display={{ xs: "none", lg: "inline-block" }}>
+                <CoreUIButton
                   component={Link}
                   to={action.route}
                   variant={action.variant ? action.variant : "contained"}
@@ -138,11 +123,11 @@ function DefaultNavbar({ brand, transparent, light, action }) {
                   size="small"
                 >
                   {action.label}
-                </ArgonButton>
-              </ArgonBox>
+                </CoreUIButton>
+              </CoreUIBox>
             ) : (
-              <ArgonBox display={{ xs: "none", lg: "inline-block" }}>
-                <ArgonButton
+              <CoreUIBox display={{ xs: "none", lg: "inline-block" }}>
+                <CoreUIButton
                   component="a"
                   href={action.route}
                   target="_blank"
@@ -153,10 +138,10 @@ function DefaultNavbar({ brand, transparent, light, action }) {
                   sx={{ mt: -0.3 }}
                 >
                   {action.label}
-                </ArgonButton>
-              </ArgonBox>
+                </CoreUIButton>
+              </CoreUIBox>
             ))}
-          <ArgonBox
+          <CoreUIBox
             display={{ xs: "inline-block", lg: "none" }}
             lineHeight={0}
             py={1.5}
@@ -166,9 +151,9 @@ function DefaultNavbar({ brand, transparent, light, action }) {
             onClick={openMobileNavbar}
           >
             <Icon fontSize="default">{mobileNavbar ? "close" : "menu"}</Icon>
-          </ArgonBox>
-        </ArgonBox>
-      </ArgonBox>
+          </CoreUIBox>
+        </CoreUIBox>
+      </CoreUIBox>
       {mobileView && <DefaultNavbarMobile open={mobileNavbar} close={closeMobileNavbar} />}
     </Container>
   );
@@ -176,7 +161,7 @@ function DefaultNavbar({ brand, transparent, light, action }) {
 
 // Declaring default props for DefaultNavbar
 DefaultNavbar.defaultProps = {
-  brand: "Argon Dashboard 2",
+  brand: "CoreUI Dashboard 2",
   transparent: false,
   light: false,
   action: false,

@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // react-router-dom components
 import { Link } from "react-router-dom";
 
@@ -24,12 +9,12 @@ import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 function CategoriesList({ title, categories }) {
   const renderItems = categories.map(({ color, icon, name, description, route }, key) => (
-    <ArgonBox
+    <CoreUIBox
       key={name}
       component="li"
       display="flex"
@@ -40,8 +25,8 @@ function CategoriesList({ title, categories }) {
       pr={2}
       mb={categories.length - 1 === key ? 0 : 1}
     >
-      <ArgonBox display="flex" alignItems="center">
-        <ArgonBox
+      <CoreUIBox display="flex" alignItems="center">
+        <CoreUIBox
           display="grid"
           alignItems="center"
           justifyContent="center"
@@ -62,18 +47,18 @@ function CategoriesList({ title, categories }) {
           >
             {icon}
           </Icon>
-        </ArgonBox>
-        <ArgonBox display="flex" flexDirection="column">
-          <ArgonTypography variant="button" color={color} fontWeight="medium" gutterBottom>
+        </CoreUIBox>
+        <CoreUIBox display="flex" flexDirection="column">
+          <CoreUITypography variant="button" color={color} fontWeight="medium" gutterBottom>
             {name}
-          </ArgonTypography>
-          <ArgonTypography variant="caption" color="text">
+          </CoreUITypography>
+          <CoreUITypography variant="caption" color="text">
             {description}
-          </ArgonTypography>
-        </ArgonBox>
-      </ArgonBox>
-      <ArgonBox display="flex">
-        <ArgonTypography
+          </CoreUITypography>
+        </CoreUIBox>
+      </CoreUIBox>
+      <CoreUIBox display="flex">
+        <CoreUITypography
           component={Link}
           variant="button"
           color={color}
@@ -89,23 +74,23 @@ function CategoriesList({ title, categories }) {
           }}
         >
           <Icon sx={{ fontWeight: "bold" }}>chevron_right</Icon>
-        </ArgonTypography>
-      </ArgonBox>
-    </ArgonBox>
+        </CoreUITypography>
+      </CoreUIBox>
+    </CoreUIBox>
   ));
 
   return (
     <Card>
-      <ArgonBox pt={2} px={2}>
-        <ArgonTypography variant="h6" fontWeight="medium" textTransform="capitalize">
+      <CoreUIBox pt={2} px={2}>
+        <CoreUITypography variant="h6" fontWeight="medium" textTransform="capitalize">
           {title}
-        </ArgonTypography>
-      </ArgonBox>
-      <ArgonBox p={2}>
-        <ArgonBox component="ul" display="flex" flexDirection="column" p={0} m={0}>
+        </CoreUITypography>
+      </CoreUIBox>
+      <CoreUIBox p={2}>
+        <CoreUIBox component="ul" display="flex" flexDirection="column" p={0} m={0}>
           {renderItems}
-        </ArgonBox>
-      </ArgonBox>
+        </CoreUIBox>
+      </CoreUIBox>
     </Card>
   );
 }

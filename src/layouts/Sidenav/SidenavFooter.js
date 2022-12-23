@@ -1,28 +1,13 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // @mui material components
 import Link from "@mui/material/Link";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonButton from "../../components/ArgonButton";
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
+import CoreUIButton from "components/CoreUIButton";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 // CoreUI Dashboard 2 MUI context
-import { useCoreUIController } from "../../cores/contexts";
+import { useCoreUIController } from "cores/contexts";
 
 // Images
 import icon from "assets/images/illustrations/icon-documentation.svg";
@@ -32,10 +17,10 @@ function SidenavFooter() {
   const { miniSidenav, darkSidenav } = controller;
 
   return (
-    <ArgonBox opacity={miniSidenav ? 0 : 1} sx={{ transition: "opacity 200ms linear" }}>
-      <ArgonBox position="relative" textAlign="center">
-        <ArgonBox component="img" src={icon} alt="sidebar_illustration" width="60%" />
-        <ArgonBox
+    <CoreUIBox opacity={miniSidenav ? 0 : 1} sx={{ transition: "opacity 200ms linear" }}>
+      <CoreUIBox position="relative" textAlign="center">
+        <CoreUIBox component="img" src={icon} alt="sidebar_illustration" width="60%" />
+        <CoreUIBox
           width="100%"
           pb={2}
           px={2}
@@ -43,18 +28,18 @@ function SidenavFooter() {
           textAlign="center"
           lineHeight={0}
         >
-          <ArgonTypography color="inherit" variant="h6">
+          <CoreUITypography color="inherit" variant="h6">
             Need help?
-          </ArgonTypography>
-          <ArgonTypography color="inherit" variant="caption">
+          </CoreUITypography>
+          <CoreUITypography color="inherit" variant="caption">
             Please check our docs
-          </ArgonTypography>
-        </ArgonBox>
-      </ArgonBox>
-      <ArgonBox display="flex" flexDirection="column">
-        <ArgonButton
+          </CoreUITypography>
+        </CoreUIBox>
+      </CoreUIBox>
+      <CoreUIBox display="flex" flexDirection="column">
+        <CoreUIButton
           component={Link}
-          href="https://www.creative-tim.com/learning-lab/react/overview/argon-dashboard/"
+          href="https://www.creative-tim.com/learning-lab/react/overview/CoreUI-dashboard/"
           target="_blank"
           rel="noreferrer"
           color="dark"
@@ -63,10 +48,10 @@ function SidenavFooter() {
           sx={{ mb: 1 }}
         >
           Documentation
-        </ArgonButton>
-        <ArgonButton
+        </CoreUIButton>
+        <CoreUIButton
           component={Link}
-          href="https://www.creative-tim.com/product/argon-dashboard-material-ui"
+          href="https://www.creative-tim.com/product/CoreUI-dashboard-material-ui"
           target="_blank"
           rel="noreferrer"
           color="info"
@@ -75,9 +60,9 @@ function SidenavFooter() {
           mb={2}
         >
           Upgrade to PRO
-        </ArgonButton>
-      </ArgonBox>
-    </ArgonBox>
+        </CoreUIButton>
+      </CoreUIBox>
+    </CoreUIBox>
   );
 }
 

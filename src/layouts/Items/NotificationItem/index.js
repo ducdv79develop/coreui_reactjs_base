@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { forwardRef } from "react";
 
 // prop-types is a library for typechecking of props.
@@ -23,15 +8,15 @@ import MenuItem from "@mui/material/MenuItem";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 // custom styles for the NotificationItem
-import { menuItem, menuImage } from "./layouts/Items/NotificationItem/styles";
+import { menuItem, menuImage } from "layouts/Items/NotificationItem/styles";
 
 const NotificationItem = forwardRef(({ color, image, title, date, ...rest }, ref) => (
   <MenuItem {...rest} ref={ref} sx={(theme) => menuItem(theme)}>
-    <ArgonBox
+    <CoreUIBox
       width="2.25rem"
       height="2.25rem"
       mt={0.25}
@@ -41,12 +26,12 @@ const NotificationItem = forwardRef(({ color, image, title, date, ...rest }, ref
       sx={(theme) => menuImage(theme, { color })}
     >
       {image}
-    </ArgonBox>
-    <ArgonBox>
-      <ArgonTypography variant="button" textTransform="capitalize" fontWeight="regular">
+    </CoreUIBox>
+    <CoreUIBox>
+      <CoreUITypography variant="button" textTransform="capitalize" fontWeight="regular">
         <strong>{title[0]}</strong> {title[1]}
-      </ArgonTypography>
-      <ArgonTypography
+      </CoreUITypography>
+      <CoreUITypography
         variant="caption"
         color="secondary"
         sx={{
@@ -55,7 +40,7 @@ const NotificationItem = forwardRef(({ color, image, title, date, ...rest }, ref
           mt: 0.5,
         }}
       >
-        <ArgonTypography variant="button" color="secondary">
+        <CoreUITypography variant="button" color="secondary">
           <Icon
             sx={{
               lineHeight: 1.2,
@@ -64,10 +49,10 @@ const NotificationItem = forwardRef(({ color, image, title, date, ...rest }, ref
           >
             watch_later
           </Icon>
-        </ArgonTypography>
+        </CoreUITypography>
         {date}
-      </ArgonTypography>
-    </ArgonBox>
+      </CoreUITypography>
+    </CoreUIBox>
   </MenuItem>
 ));
 

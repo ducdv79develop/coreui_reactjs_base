@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useMemo } from "react";
 
 // porp-types is a library for typechecking of props
@@ -25,11 +10,11 @@ import { Radar } from "react-chartjs-2";
 import Card from "@mui/material/Card";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 // RadarChart configurations
-import configs from "./layouts/Charts/RadarChart/configs";
+import configs from "layouts/Charts/RadarChart/configs";
 
 // CoreUI Dashboard 2 MUI base styles
 import colors from "assets/theme/base/colors";
@@ -50,30 +35,30 @@ function RadarChart({ title, description, chart }) {
   const { data, options } = configs(chart.labels || [], chartDatasets);
 
   const renderChart = (
-    <ArgonBox p={2}>
+    <CoreUIBox p={2}>
       {title || description ? (
-        <ArgonBox px={description ? 1 : 0} pt={description ? 1 : 0}>
+        <CoreUIBox px={description ? 1 : 0} pt={description ? 1 : 0}>
           {title && (
-            <ArgonBox mb={1}>
-              <ArgonTypography variant="h6">{title}</ArgonTypography>
-            </ArgonBox>
+            <CoreUIBox mb={1}>
+              <CoreUITypography variant="h6">{title}</CoreUITypography>
+            </CoreUIBox>
           )}
-          <ArgonBox mb={2}>
-            <ArgonTypography component="div" variant="button" fontWeight="regular" color="text">
+          <CoreUIBox mb={2}>
+            <CoreUITypography component="div" variant="button" fontWeight="regular" color="text">
               {description}
-            </ArgonTypography>
-          </ArgonBox>
-        </ArgonBox>
+            </CoreUITypography>
+          </CoreUIBox>
+        </CoreUIBox>
       ) : null}
       {useMemo(
         () => (
-          <ArgonBox p={6}>
+          <CoreUIBox p={6}>
             <Radar data={data} options={options} />
-          </ArgonBox>
+          </CoreUIBox>
         ),
         [chart]
       )}
-    </ArgonBox>
+    </CoreUIBox>
   );
 
   return title || description ? <Card>{renderChart}</Card> : renderChart;

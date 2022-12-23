@@ -1,3 +1,4 @@
+// prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
 // @mui material components
@@ -8,13 +9,13 @@ import ListItemText from "@mui/material/ListItemText";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
+import CoreUIBox from "components/CoreUIBox";
 
 // Custom styles for the sidenavItem
-import { item, itemIcon, itemText, itemIconBox } from "./styles/sidenavItem";
+import { item, itemIcon, itemText, itemIconBox } from "layouts/Sidenav/styles/sidenavItem";
 
 // CoreUI Dashboard 2 MUI context
-import { useCoreUIController } from "../../cores/contexts";
+import { useCoreUIController } from "cores/contexts";
 
 function SidenavItem({ icon, name, active, open, ...rest }) {
   const [controller] = useCoreUIController();
@@ -23,7 +24,7 @@ function SidenavItem({ icon, name, active, open, ...rest }) {
   return (
     <>
       <ListItem component="li">
-        <ArgonBox
+        <CoreUIBox
           {...rest}
           sx={(theme) => item(theme, { active, darkSidenav, sidenavColor, miniSidenav })}
         >
@@ -39,7 +40,7 @@ function SidenavItem({ icon, name, active, open, ...rest }) {
             primary={name}
             sx={(theme) => itemText(theme, { miniSidenav, darkSidenav, active })}
           />
-        </ArgonBox>
+        </CoreUIBox>
       </ListItem>
     </>
   );

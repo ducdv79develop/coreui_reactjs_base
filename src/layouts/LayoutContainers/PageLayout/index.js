@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useEffect } from "react";
 
 // react-router-dom components
@@ -22,10 +7,10 @@ import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
+import CoreUIBox from "components/CoreUIBox";
 
 // CoreUI Dashboard 2 MUI context
-import { useCoreUIController, setLayout } from "../../cores/contexts";
+import { useCoreUIController, setLayout } from "cores/contexts";
 
 function PageLayout({ background, children }) {
   const [controller, dispatch] = useCoreUIController();
@@ -38,7 +23,7 @@ function PageLayout({ background, children }) {
   }, [pathname]);
 
   return (
-    <ArgonBox
+    <CoreUIBox
       width="100vw"
       height="100%"
       minHeight="100vh"
@@ -46,7 +31,7 @@ function PageLayout({ background, children }) {
       sx={{ overflowX: "hidden" }}
     >
       {children}
-    </ArgonBox>
+    </CoreUIBox>
   );
 }
 

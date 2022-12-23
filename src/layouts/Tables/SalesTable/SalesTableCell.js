@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -20,8 +5,8 @@ import PropTypes from "prop-types";
 import TableCell from "@mui/material/TableCell";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonTypography from "../../components/ArgonTypography";
-import ArgonBox from "../../components/ArgonBox";
+import CoreUITypography from "components/CoreUITypography";
+import CoreUIBox from "components/CoreUIBox";
 
 function SalesTableCell({ title, content, image, noBorder, ...rest }) {
   let template;
@@ -29,40 +14,40 @@ function SalesTableCell({ title, content, image, noBorder, ...rest }) {
   if (image) {
     template = (
       <TableCell {...rest} align="left" width="30%" sx={{ border: noBorder && 0 }}>
-        <ArgonBox display="flex" alignItems="center" width="max-content">
-          <ArgonBox component="img" src={image} alt={content} width="1.5rem" height="auto" />{" "}
-          <ArgonBox display="flex" flexDirection="column" ml={3}>
-            <ArgonTypography
+        <CoreUIBox display="flex" alignItems="center" width="max-content">
+          <CoreUIBox component="img" src={image} alt={content} width="1.5rem" height="auto" />{" "}
+          <CoreUIBox display="flex" flexDirection="column" ml={3}>
+            <CoreUITypography
               variant="caption"
               color="text"
               fontWeight="medium"
               textTransform="capitalize"
             >
               {title}:
-            </ArgonTypography>
-            <ArgonTypography variant="button" fontWeight="medium" textTransform="capitalize">
+            </CoreUITypography>
+            <CoreUITypography variant="button" fontWeight="medium" textTransform="capitalize">
               {content}
-            </ArgonTypography>
-          </ArgonBox>
-        </ArgonBox>
+            </CoreUITypography>
+          </CoreUIBox>
+        </CoreUIBox>
       </TableCell>
     );
   } else {
     template = (
       <TableCell {...rest} align="center" sx={{ border: noBorder && 0 }}>
-        <ArgonBox display="flex" flexDirection="column">
-          <ArgonTypography
+        <CoreUIBox display="flex" flexDirection="column">
+          <CoreUITypography
             variant="caption"
             color="text"
             fontWeight="medium"
             textTransform="capitalize"
           >
             {title}:
-          </ArgonTypography>
-          <ArgonTypography variant="button" fontWeight="medium" textTransform="capitalize">
+          </CoreUITypography>
+          <CoreUITypography variant="button" fontWeight="medium" textTransform="capitalize">
             {content}
-          </ArgonTypography>
-        </ArgonBox>
+          </CoreUITypography>
+        </CoreUIBox>
       </TableCell>
     );
   }

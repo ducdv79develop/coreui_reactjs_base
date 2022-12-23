@@ -2,16 +2,16 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 // import App
-import App from "./App";
+import App from "App";
 
 // Soft CoreUI Context Provider
-import { CoreUIControllerProvider } from "./cores/contexts";
+import { CoreUIControllerProvider } from "cores/contexts";
 
 // react-perfect-scrollbar component
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
 
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from 'reportWebVitals';
 
 const container = document.getElementById("root");
 const root = createRoot(container);

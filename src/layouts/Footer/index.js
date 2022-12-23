@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -21,8 +6,8 @@ import Link from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 // CoreUI Dashboard 2 MUI base styles
 import typography from "assets/theme/base/typography";
@@ -33,17 +18,17 @@ function Footer({ company, links }) {
 
   const renderLinks = () =>
     links.map((link) => (
-      <ArgonBox key={link.name} component="li" px={2} lineHeight={1}>
+      <CoreUIBox key={link.name} component="li" px={2} lineHeight={1}>
         <Link href={link.href} target="_blank">
-          <ArgonTypography variant="button" fontWeight="regular" color="text">
+          <CoreUITypography variant="button" fontWeight="regular" color="text">
             {link.name}
-          </ArgonTypography>
+          </CoreUITypography>
         </Link>
-      </ArgonBox>
+      </CoreUIBox>
     ));
 
   return (
-    <ArgonBox
+    <CoreUIBox
       width="100%"
       display="flex"
       flexDirection={{ xs: "column", lg: "row" }}
@@ -51,7 +36,7 @@ function Footer({ company, links }) {
       alignItems="center"
       px={1.5}
     >
-      <ArgonBox
+      <CoreUIBox
         display="flex"
         justifyContent="center"
         alignItems="center"
@@ -61,20 +46,20 @@ function Footer({ company, links }) {
         px={1.5}
       >
         &copy; {new Date().getFullYear()}, made with
-        <ArgonBox fontSize={size.md} color="text" mb={-0.5} mx={0.25}>
+        <CoreUIBox fontSize={size.md} color="text" mb={-0.5} mx={0.25}>
           <Icon color="inherit" fontSize="inherit">
             favorite
           </Icon>
-        </ArgonBox>
+        </CoreUIBox>
         by
         <Link href={href} target="_blank">
-          <ArgonTypography variant="button" fontWeight="medium">
+          <CoreUITypography variant="button" fontWeight="medium">
             &nbsp;{name}&nbsp;
-          </ArgonTypography>
+          </CoreUITypography>
         </Link>
         for a better web.
-      </ArgonBox>
-      <ArgonBox
+      </CoreUIBox>
+      <CoreUIBox
         component="ul"
         sx={({ breakpoints }) => ({
           display: "flex",
@@ -92,8 +77,8 @@ function Footer({ company, links }) {
         })}
       >
         {renderLinks()}
-      </ArgonBox>
-    </ArgonBox>
+      </CoreUIBox>
+    </CoreUIBox>
   );
 }
 

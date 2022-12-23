@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // react-countup components
 import CountUp from "react-countup";
 
@@ -20,8 +5,8 @@ import CountUp from "react-countup";
 import PropTypes from "prop-types";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../../../components/ArgonBox";
-import ArgonTypography from "../../../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 // CoreUI Dashboard 2 MUI base styles
 import colors from "assets/theme/base/colors";
@@ -32,31 +17,31 @@ function OutlinedCounterCard({ color, count, title, prefix, suffix }) {
   const { borderWidth } = borders;
 
   return (
-    <ArgonBox
+    <CoreUIBox
       borderRadius="md"
       border={`${borderWidth[1]} dashed ${secondary.main}`}
       textAlign="center"
       py={2}
     >
-      <ArgonTypography variant="h6" color={color} fontWeight="medium" textTransform="capitalize">
+      <CoreUITypography variant="h6" color={color} fontWeight="medium" textTransform="capitalize">
         {title}
-      </ArgonTypography>
-      <ArgonTypography variant="h4" fontWeight="bold">
+      </CoreUITypography>
+      <CoreUITypography variant="h4" fontWeight="bold">
         {prefix && (
-          <ArgonTypography component="span" variant="h5" fontWeight="bold">
+          <CoreUITypography component="span" variant="h5" fontWeight="bold">
             {prefix}
-          </ArgonTypography>
+          </CoreUITypography>
         )}
-        <ArgonBox display="inline-block" color="inherit" mx={0.5}>
+        <CoreUIBox display="inline-block" color="inherit" mx={0.5}>
           <CountUp end={count} duration={1} separator="," />
-        </ArgonBox>
+        </CoreUIBox>
         {suffix && (
-          <ArgonTypography component="span" variant="h5" fontWeight="bold">
+          <CoreUITypography component="span" variant="h5" fontWeight="bold">
             {suffix}
-          </ArgonTypography>
+          </CoreUITypography>
         )}
-      </ArgonTypography>
-    </ArgonBox>
+      </CoreUITypography>
+    </CoreUIBox>
   );
 }
 

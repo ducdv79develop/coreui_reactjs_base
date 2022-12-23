@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // porp-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -23,17 +8,17 @@ import Icon from "@mui/material/Icon";
 import typography from "assets/theme/base/typography";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
-import ArgonProgress from "../../components/ArgonProgress";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
+import CoreUIProgress from "components/CoreUIProgress";
 
 function ReportsBarChartItem({ color, icon, label, progress }) {
   const { size } = typography;
 
   return (
-    <ArgonBox width="100%">
-      <ArgonBox display="flex" alignItems="center" mb={2}>
-        <ArgonBox
+    <CoreUIBox width="100%">
+      <CoreUIBox display="flex" alignItems="center" mb={2}>
+        <CoreUIBox
           bgColor={icon.color}
           width="1.25rem"
           height="1.25rem"
@@ -48,25 +33,25 @@ function ReportsBarChartItem({ color, icon, label, progress }) {
           variant="gradient"
         >
           <Icon>{icon.component}</Icon>
-        </ArgonBox>
-        <ArgonTypography
+        </CoreUIBox>
+        <CoreUITypography
           variant="caption"
           textTransform="capitalize"
           fontWeight="medium"
           color="text"
         >
           {label}
-        </ArgonTypography>
-      </ArgonBox>
-      <ArgonBox mt={1}>
-        <ArgonTypography variant="h4" fontWeight="bold" color={color}>
+        </CoreUITypography>
+      </CoreUIBox>
+      <CoreUIBox mt={1}>
+        <CoreUITypography variant="h4" fontWeight="bold" color={color}>
           {progress.content}
-        </ArgonTypography>
-        <ArgonBox width="75%" mt={0.5}>
-          <ArgonProgress value={progress.percentage} color={color} />
-        </ArgonBox>
-      </ArgonBox>
-    </ArgonBox>
+        </CoreUITypography>
+        <CoreUIBox width="75%" mt={0.5}>
+          <CoreUIProgress value={progress.percentage} color={color} />
+        </CoreUIBox>
+      </CoreUIBox>
+    </CoreUIBox>
   );
 }
 

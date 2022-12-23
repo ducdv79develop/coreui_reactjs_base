@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // react-router-dom components
 import { Link } from "react-router-dom";
 
@@ -25,15 +10,15 @@ import CardMedia from "@mui/material/CardMedia";
 import Tooltip from "@mui/material/Tooltip";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../../../components/ArgonBox";
-import ArgonTypography from "../../../../components/ArgonTypography";
-import ArgonButton from "../../../../components/ArgonButton";
-import ArgonAvatar from "../../../../components/ArgonAvatar";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
+import CoreUIButton from "components/CoreUIButton";
+import CoreUIAvatar from "components/CoreUIAvatar";
 
 function DefaultProjectCard({ image, label, title, description, action, authors }) {
   const renderAuthors = authors.map(({ image: media, name }) => (
     <Tooltip key={name} title={name} placement="bottom">
-      <ArgonAvatar
+      <CoreUIAvatar
         src={media}
         alt={name}
         size="xs"
@@ -61,7 +46,7 @@ function DefaultProjectCard({ image, label, title, description, action, authors 
         overflow: "visible",
       }}
     >
-      <ArgonBox position="relative" width="100.25%" shadow="md" borderRadius="xl">
+      <CoreUIBox position="relative" width="100.25%" shadow="md" borderRadius="xl">
         <CardMedia
           src={image}
           component="img"
@@ -74,28 +59,28 @@ function DefaultProjectCard({ image, label, title, description, action, authors 
             objectPosition: "center",
           }}
         />
-      </ArgonBox>
-      <ArgonBox pt={2} px={0.5}>
-        <ArgonTypography
+      </CoreUIBox>
+      <CoreUIBox pt={2} px={0.5}>
+        <CoreUITypography
           variant="button"
           fontWeight="regular"
           textTransform="capitalize"
           textGradient
         >
           {label}
-        </ArgonTypography>
-        <ArgonBox mb={1}>
+        </CoreUITypography>
+        <CoreUIBox mb={1}>
           {action.type === "internal" ? (
-            <ArgonTypography
+            <CoreUITypography
               component={Link}
               to={action.route}
               variant="h5"
               textTransform="capitalize"
             >
               {title}
-            </ArgonTypography>
+            </CoreUITypography>
           ) : (
-            <ArgonTypography
+            <CoreUITypography
               component="a"
               href={action.route}
               target="_blank"
@@ -104,17 +89,17 @@ function DefaultProjectCard({ image, label, title, description, action, authors 
               textTransform="capitalize"
             >
               {title}
-            </ArgonTypography>
+            </CoreUITypography>
           )}
-        </ArgonBox>
-        <ArgonBox mb={3} lineHeight={0}>
-          <ArgonTypography variant="button" fontWeight="regular" color="text">
+        </CoreUIBox>
+        <CoreUIBox mb={3} lineHeight={0}>
+          <CoreUITypography variant="button" fontWeight="regular" color="text">
             {description}
-          </ArgonTypography>
-        </ArgonBox>
-        <ArgonBox display="flex" justifyContent="space-between" alignItems="center">
+          </CoreUITypography>
+        </CoreUIBox>
+        <CoreUIBox display="flex" justifyContent="space-between" alignItems="center">
           {action.type === "internal" ? (
-            <ArgonButton
+            <CoreUIButton
               component={Link}
               to={action.route}
               variant="outlined"
@@ -122,9 +107,9 @@ function DefaultProjectCard({ image, label, title, description, action, authors 
               color={action.color}
             >
               {action.label}
-            </ArgonButton>
+            </CoreUIButton>
           ) : (
-            <ArgonButton
+            <CoreUIButton
               component="a"
               href={action.route}
               target="_blank"
@@ -134,11 +119,11 @@ function DefaultProjectCard({ image, label, title, description, action, authors 
               color={action.color}
             >
               {action.label}
-            </ArgonButton>
+            </CoreUIButton>
           )}
-          <ArgonBox display="flex">{renderAuthors}</ArgonBox>
-        </ArgonBox>
-      </ArgonBox>
+          <CoreUIBox display="flex">{renderAuthors}</CoreUIBox>
+        </CoreUIBox>
+      </CoreUIBox>
     </Card>
   );
 }

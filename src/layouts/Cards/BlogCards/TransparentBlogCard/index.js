@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // react-router components
 import { Link } from "react-router-dom";
 
@@ -26,8 +11,8 @@ import Icon from "@mui/material/Icon";
 import MuiLink from "@mui/material/Link";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../../../components/ArgonBox";
-import ArgonTypography from "../../../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 function TransparentBlogCard({ image, title, description, action }) {
   const cardImageStyles = {
@@ -90,28 +75,28 @@ function TransparentBlogCard({ image, title, description, action }) {
           <CardMedia src={image} component="img" title={title} sx={cardImageStyles} />
         </MuiLink>
       )}
-      <ArgonBox py={3}>
+      <CoreUIBox py={3}>
         {action.type === "internal" ? (
           <Link to={action.route} sx={cardActionStyles}>
-            <ArgonTypography variant="h5" gutterBottom>
+            <CoreUITypography variant="h5" gutterBottom>
               {title}
-            </ArgonTypography>
+            </CoreUITypography>
           </Link>
         ) : (
           <MuiLink href={action.route} target="_blank" rel="noreferrer" sx={cardActionStyles}>
-            <ArgonTypography variant="h5" gutterBottom>
+            <CoreUITypography variant="h5" gutterBottom>
               {title}
-            </ArgonTypography>
+            </CoreUITypography>
           </MuiLink>
         )}
-        <ArgonBox mb={2}>
-          <ArgonTypography variant="body2" component="p" color="text">
+        <CoreUIBox mb={2}>
+          <CoreUITypography variant="body2" component="p" color="text">
             {description}
-          </ArgonTypography>
-        </ArgonBox>
+          </CoreUITypography>
+        </CoreUIBox>
         {action.type === "internal" ? (
           <Link to={action.route} sx={cardActionStyles}>
-            <ArgonTypography
+            <CoreUITypography
               variant="body2"
               color={action.color}
               textTransform="capitalize"
@@ -119,11 +104,11 @@ function TransparentBlogCard({ image, title, description, action }) {
             >
               {action.label}
               <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
-            </ArgonTypography>
+            </CoreUITypography>
           </Link>
         ) : (
           <MuiLink href={action.route} target="_blank" rel="noreferrer" sx={cardActionStyles}>
-            <ArgonTypography
+            <CoreUITypography
               variant="body2"
               color={action.color}
               textTransform="capitalize"
@@ -131,10 +116,10 @@ function TransparentBlogCard({ image, title, description, action }) {
             >
               {action.label}
               <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
-            </ArgonTypography>
+            </CoreUITypography>
           </MuiLink>
         )}
-      </ArgonBox>
+      </CoreUIBox>
     </Card>
   );
 }

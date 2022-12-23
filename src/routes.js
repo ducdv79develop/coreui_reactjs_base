@@ -5,7 +5,7 @@ import SignIn from "views/authentication/sign-in";
 import SignUp from "views/authentication/sign-up";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "./components/ArgonBox";
+import CoreUIBox from "components/CoreUIBox";
 
 const routes = [
     {
@@ -13,7 +13,7 @@ const routes = [
         name: "Dashboard",
         key: "dashboard",
         route: "/dashboard",
-        icon: <ArgonBox component="i" color="primary" fontSize="14px" className="ni ni-tv-2" />,
+        icon: <CoreUIBox component="i" color="primary" fontSize="14px" className="ni ni-tv-2" />,
         component: <Dashboard />,
     },
     {
@@ -22,7 +22,7 @@ const routes = [
         key: "tables",
         route: "/tables",
         icon: (
-            <ArgonBox component="i" color="warning" fontSize="14px" className="ni ni-calendar-grid-58" />
+            <CoreUIBox component="i" color="warning" fontSize="14px" className="ni ni-calendar-grid-58" />
         ),
         component: <Tables />,
     },
@@ -32,7 +32,7 @@ const routes = [
         name: "Profile",
         key: "profile",
         route: "/profile",
-        icon: <ArgonBox component="i" color="dark" fontSize="14px" className="ni ni-single-02" />,
+        icon: <CoreUIBox component="i" color="dark" fontSize="14px" className="ni ni-single-02" />,
         component: <Profile />,
     },
     {
@@ -41,7 +41,7 @@ const routes = [
         key: "sign-in",
         route: "/authentication/sign-in",
         icon: (
-            <ArgonBox component="i" color="warning" fontSize="14px" className="ni ni-single-copy-04" />
+            <CoreUIBox component="i" color="warning" fontSize="14px" className="ni ni-single-copy-04" />
         ),
         component: <SignIn />,
     },
@@ -50,7 +50,7 @@ const routes = [
         name: "Sign Up",
         key: "sign-up",
         route: "/authentication/sign-up",
-        icon: <ArgonBox component="i" color="info" fontSize="14px" className="ni ni-collection" />,
+        icon: <CoreUIBox component="i" color="info" fontSize="14px" className="ni ni-collection" />,
         component: <SignUp />,
     },
 ];

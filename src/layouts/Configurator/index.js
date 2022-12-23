@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // react-github-btn
 import GitHubButton from "react-github-btn";
 
@@ -28,12 +13,12 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
-import ArgonButton from "../../components/ArgonButton";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
+import CoreUIButton from "components/CoreUIButton";
 
 // Custom styles for the Configurator
-import ConfiguratorRoot from "./layouts/Configurator/ConfiguratorRoot";
+import ConfiguratorRoot from "layouts/Configurator/ConfiguratorRoot";
 
 // CoreUI Dashboard 2 MUI context
 import {
@@ -44,7 +29,7 @@ import {
   setFixedNavbar,
   setSidenavColor,
   setDarkMode,
-} from "../../cores/contexts";
+} from "cores/contexts";
 
 function Configurator() {
   const [controller, dispatch] = useCoreUIController();
@@ -64,7 +49,7 @@ function Configurator() {
 
   return (
     <ConfiguratorRoot variant="permanent" ownerState={{ openConfigurator }}>
-      <ArgonBox
+      <CoreUIBox
         display="flex"
         justifyContent="space-between"
         alignItems="baseline"
@@ -72,12 +57,12 @@ function Configurator() {
         pb={0.8}
         px={3}
       >
-        <ArgonBox>
-          <ArgonTypography variant="h5">Argon Configurator</ArgonTypography>
-          <ArgonTypography variant="body2" color="text">
+        <CoreUIBox>
+          <CoreUITypography variant="h5">CoreUI Configurator</CoreUITypography>
+          <CoreUITypography variant="body2" color="text">
             See our dashboard options.
-          </ArgonTypography>
-        </ArgonBox>
+          </CoreUITypography>
+        </CoreUIBox>
 
         <Icon
           sx={({ typography: { size, fontWeightBold }, palette: { dark, white } }) => ({
@@ -93,15 +78,15 @@ function Configurator() {
         >
           close
         </Icon>
-      </ArgonBox>
+      </CoreUIBox>
 
       <Divider />
 
-      <ArgonBox pt={1.25} pb={3} px={3}>
-        <ArgonBox>
-          <ArgonTypography variant="h6">Sidenav Colors</ArgonTypography>
+      <CoreUIBox pt={1.25} pb={3} px={3}>
+        <CoreUIBox>
+          <CoreUITypography variant="h6">Sidenav Colors</CoreUITypography>
 
-          <ArgonBox mb={0.5}>
+          <CoreUIBox mb={0.5}>
             {sidenavColors.map((color) => (
               <IconButton
                 key={color}
@@ -129,30 +114,30 @@ function Configurator() {
                 onClick={() => setSidenavColor(dispatch, color)}
               />
             ))}
-          </ArgonBox>
-        </ArgonBox>
+          </CoreUIBox>
+        </CoreUIBox>
 
-        <ArgonBox mt={3} lineHeight={1}>
-          <ArgonTypography variant="h6">Sidenav Type</ArgonTypography>
-          <ArgonTypography variant="button" color="text" fontWeight="regular">
+        <CoreUIBox mt={3} lineHeight={1}>
+          <CoreUITypography variant="h6">Sidenav Type</CoreUITypography>
+          <CoreUITypography variant="button" color="text" fontWeight="regular">
             Choose between 2 different sidenav types.
-          </ArgonTypography>
+          </CoreUITypography>
 
-          <ArgonBox
+          <CoreUIBox
             sx={{
               display: "flex",
               mt: 2,
             }}
           >
-            <ArgonButton
+            <CoreUIButton
               color="info"
               variant={darkSidenav ? "outlined" : "gradient"}
               onClick={handleWhiteSidenav}
               fullWidth
             >
               White
-            </ArgonButton>
-            <ArgonButton
+            </CoreUIButton>
+            <CoreUIButton
               color="info"
               variant={darkSidenav ? "gradient" : "outlined"}
               onClick={handledarkSidenav}
@@ -162,59 +147,59 @@ function Configurator() {
               }}
             >
               Dark
-            </ArgonButton>
-          </ArgonBox>
-        </ArgonBox>
-        <ArgonBox display="flex" justifyContent="space-between" mt={3} lineHeight={1}>
-          <ArgonTypography variant="h6">Navbar Fixed</ArgonTypography>
+            </CoreUIButton>
+          </CoreUIBox>
+        </CoreUIBox>
+        <CoreUIBox display="flex" justifyContent="space-between" mt={3} lineHeight={1}>
+          <CoreUITypography variant="h6">Navbar Fixed</CoreUITypography>
 
           <Switch checked={fixedNavbar} onChange={handleFixedNavbar} />
-        </ArgonBox>
+        </CoreUIBox>
 
         <Divider />
 
-        <ArgonBox display="flex" justifyContent="space-between" lineHeight={1}>
-          <ArgonTypography variant="h6">Sidenav Mini</ArgonTypography>
+        <CoreUIBox display="flex" justifyContent="space-between" lineHeight={1}>
+          <CoreUITypography variant="h6">Sidenav Mini</CoreUITypography>
 
           <Switch checked={miniSidenav} onChange={handleMiniSidenav} />
-        </ArgonBox>
+        </CoreUIBox>
 
         <Divider />
 
-        <ArgonBox display="flex" justifyContent="space-between" lineHeight={1}>
-          <ArgonTypography variant="h6">Light / Dark</ArgonTypography>
+        <CoreUIBox display="flex" justifyContent="space-between" lineHeight={1}>
+          <CoreUITypography variant="h6">Light / Dark</CoreUITypography>
 
           <Switch checked={darkMode} onChange={handleDarkMode} />
-        </ArgonBox>
+        </CoreUIBox>
 
-        <ArgonBox mt={5} mb={2}>
-          <ArgonBox mb={2}>
-            <ArgonButton
+        <CoreUIBox mt={5} mb={2}>
+          <CoreUIBox mb={2}>
+            <CoreUIButton
               component={Link}
-              href="https://www.creative-tim.com/product/argon-dashboard-pro-material-ui"
+              href="https://www.creative-tim.com/product/CoreUI-dashboard-pro-material-ui"
               target="_blank"
               rel="noreferrer"
               color="info"
               fullWidth
             >
               Buy Now
-            </ArgonButton>
-          </ArgonBox>
-          <ArgonBox mb={2}>
-            <ArgonButton
+            </CoreUIButton>
+          </CoreUIBox>
+          <CoreUIBox mb={2}>
+            <CoreUIButton
               component={Link}
-              href="https://www.creative-tim.com/product/argon-dashboard-material-ui"
+              href="https://www.creative-tim.com/product/CoreUI-dashboard-material-ui"
               target="_blank"
               rel="noreferrer"
               color="dark"
               fullWidth
             >
               Free Download
-            </ArgonButton>
-          </ArgonBox>
-          <ArgonButton
+            </CoreUIButton>
+          </CoreUIBox>
+          <CoreUIButton
             component={Link}
-            href="https://www.creative-tim.com/learning-lab/react/quick-start/argon-dashboard/"
+            href="https://www.creative-tim.com/learning-lab/react/quick-start/CoreUI-dashboard/"
             target="_blank"
             rel="noreferrer"
             color={darkMode ? "white" : "dark"}
@@ -222,50 +207,50 @@ function Configurator() {
             fullWidth
           >
             View Documentation
-          </ArgonButton>
-        </ArgonBox>
-        <ArgonBox display="flex" justifyContent="center">
+          </CoreUIButton>
+        </CoreUIBox>
+        <CoreUIBox display="flex" justifyContent="center">
           <GitHubButton
-            href="https://github.com/creativetimofficial/argon-dashboard-material-ui"
+            href="https://github.com/creativetimofficial/CoreUI-dashboard-material-ui"
             data-icon="octicon-star"
             data-size="large"
             data-show-count="true"
-            aria-label="Star creativetimofficial/argon-dashboard-material-uit on GitHub"
+            aria-label="Star creativetimofficial/CoreUI-dashboard-material-uit on GitHub"
           >
             Star
           </GitHubButton>
-        </ArgonBox>
-        <ArgonBox mt={3} textAlign="center">
-          <ArgonBox mb={0.5}>
-            <ArgonTypography variant="h6">Thank you for sharing!</ArgonTypography>
-          </ArgonBox>
+        </CoreUIBox>
+        <CoreUIBox mt={3} textAlign="center">
+          <CoreUIBox mb={0.5}>
+            <CoreUITypography variant="h6">Thank you for sharing!</CoreUITypography>
+          </CoreUIBox>
 
-          <ArgonBox display="flex" justifyContent="center">
-            <ArgonBox mr={1.5}>
-              <ArgonButton
+          <CoreUIBox display="flex" justifyContent="center">
+            <CoreUIBox mr={1.5}>
+              <CoreUIButton
                 component={Link}
-                href="//twitter.com/intent/tweet?text=Check%20Argon%20Dashboard%202%20PRO%20MUI%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23react%20%mui&url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fargon-dashboard-material-ui"
+                href="//twitter.com/intent/tweet?text=Check%20CoreUI%20Dashboard%202%20PRO%20MUI%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23react%20%mui&url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2FCoreUI-dashboard-material-ui"
                 target="_blank"
                 rel="noreferrer"
                 color="dark"
               >
                 <TwitterIcon />
                 &nbsp; Tweet
-              </ArgonButton>
-            </ArgonBox>
-            <ArgonButton
+              </CoreUIButton>
+            </CoreUIBox>
+            <CoreUIButton
               component={Link}
-              href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/argon-dashboard-material-ui"
+              href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/CoreUI-dashboard-material-ui"
               target="_blank"
               rel="noreferrer"
               color="dark"
             >
               <FacebookIcon />
               &nbsp; Share
-            </ArgonButton>
-          </ArgonBox>
-        </ArgonBox>
-      </ArgonBox>
+            </CoreUIButton>
+          </CoreUIBox>
+        </CoreUIBox>
+      </CoreUIBox>
     </ConfiguratorRoot>
   );
 }

@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useMemo } from "react";
 
 // prop-types is a library for typechecking of props
@@ -28,9 +13,9 @@ import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonAvatar from "../../components/ArgonAvatar";
-import ArgonTypography from "../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUIAvatar from "components/CoreUIAvatar";
+import CoreUITypography from "components/CoreUITypography";
 
 // CoreUI Dashboard 2 MUI base styles
 import typography from "assets/theme/base/typography";
@@ -56,7 +41,7 @@ function Table({ columns, rows }) {
     }
 
     return (
-      <ArgonBox
+      <CoreUIBox
         key={name}
         component="th"
         width={width || "auto"}
@@ -72,7 +57,7 @@ function Table({ columns, rows }) {
         sx={({ palette: { light } }) => ({ borderBottom: `${borderWidth[1]} solid ${light.main}` })}
       >
         {name.toUpperCase()}
-      </ArgonBox>
+      </CoreUIBox>
     );
   });
 
@@ -84,7 +69,7 @@ function Table({ columns, rows }) {
 
       if (Array.isArray(row[name])) {
         template = (
-          <ArgonBox
+          <CoreUIBox
             key={uuidv4()}
             component="td"
             p={1}
@@ -92,19 +77,19 @@ function Table({ columns, rows }) {
               borderBottom: row.hasBorder ? `${borderWidth[1]} solid ${light.main}` : null,
             })}
           >
-            <ArgonBox display="flex" alignItems="center" py={0.5} px={1}>
-              <ArgonBox mr={2}>
-                <ArgonAvatar src={row[name][0]} name={row[name][1]} variant="rounded" size="sm" />
-              </ArgonBox>
-              <ArgonTypography variant="button" fontWeight="medium" sx={{ width: "max-content" }}>
+            <CoreUIBox display="flex" alignItems="center" py={0.5} px={1}>
+              <CoreUIBox mr={2}>
+                <CoreUIAvatar src={row[name][0]} name={row[name][1]} variant="rounded" size="sm" />
+              </CoreUIBox>
+              <CoreUITypography variant="button" fontWeight="medium" sx={{ width: "max-content" }}>
                 {row[name][1]}
-              </ArgonTypography>
-            </ArgonBox>
-          </ArgonBox>
+              </CoreUITypography>
+            </CoreUIBox>
+          </CoreUIBox>
         );
       } else {
         template = (
-          <ArgonBox
+          <CoreUIBox
             key={uuidv4()}
             component="td"
             p={1}
@@ -115,15 +100,15 @@ function Table({ columns, rows }) {
               borderBottom: row.hasBorder ? `${borderWidth[1]} solid ${light.main}` : null,
             })}
           >
-            <ArgonTypography
+            <CoreUITypography
               variant="button"
               fontWeight="regular"
               color="secondary"
               sx={{ display: "inline-block", width: "max-content" }}
             >
               {row[name]}
-            </ArgonTypography>
-          </ArgonBox>
+            </CoreUITypography>
+          </CoreUIBox>
         );
       }
 
@@ -137,9 +122,9 @@ function Table({ columns, rows }) {
     () => (
       <TableContainer>
         <MuiTable>
-          <ArgonBox component="thead">
+          <CoreUIBox component="thead">
             <TableRow>{renderColumns}</TableRow>
-          </ArgonBox>
+          </CoreUIBox>
           <TableBody>{renderRows}</TableBody>
         </MuiTable>
       </TableContainer>

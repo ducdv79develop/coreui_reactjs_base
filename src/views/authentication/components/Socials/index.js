@@ -1,26 +1,11 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // CoreUI Dashboard 2 MUI components
-import ArgonButton from "./components/ArgonButton";
-import ArgonBox from "./components/ArgonBox";
+import CoreUIButton from "components/CoreUIButton";
+import CoreUIBox from "components/CoreUIBox";
 
 function Socials() {
   return (
-    <ArgonBox display="flex" justifyContent="center">
-      <ArgonButton variant="outlined" color="light">
+    <CoreUIBox display="flex" justifyContent="center">
+      <CoreUIButton variant="outlined" color="light">
         <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1">
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g transform="translate(3.000000, 3.000000)" fillRule="nonzero">
@@ -32,9 +17,9 @@ function Socials() {
             </g>
           </g>
         </svg>
-      </ArgonButton>
-      <ArgonBox px={1}>
-        <ArgonButton variant="outlined" color="light">
+      </CoreUIButton>
+      <CoreUIBox px={1}>
+        <CoreUIButton variant="outlined" color="light">
           <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1">
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
               <g transform="translate(7.000000, 0.564551)" fill="#000000" fillRule="nonzero">
@@ -42,9 +27,9 @@ function Socials() {
               </g>
             </g>
           </svg>
-        </ArgonButton>
-      </ArgonBox>
-      <ArgonButton variant="outlined" color="light">
+        </CoreUIButton>
+      </CoreUIBox>
+      <CoreUIButton variant="outlined" color="light">
         <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1">
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g transform="translate(3.000000, 2.000000)" fillRule="nonzero">
@@ -67,8 +52,8 @@ function Socials() {
             </g>
           </g>
         </svg>
-      </ArgonButton>
-    </ArgonBox>
+      </CoreUIButton>
+    </CoreUIBox>
   );
 }
 

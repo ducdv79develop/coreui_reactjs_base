@@ -9,16 +9,16 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "./components/ArgonBox";
+import CoreUIBox from "components/CoreUIBox";
 
-import Sidenav from "./layouts/Sidenav";
-import Configurator from "./layouts/Configurator";
+import Sidenav from "layouts/Sidenav";
+import Configurator from "layouts/Configurator";
 
 // CoreUI Dashboard 2 MUI themes
-import theme from "./assets/theme";
-import themeRTL from "./assets/theme/theme-rtl";
-import themeDark from "./assets/theme-dark";
-import themeDarkRTL from "./assets/theme-dark/theme-rtl";
+import theme from "assets/theme";
+import themeRTL from "assets/theme/theme-rtl";
+import themeDark from "assets/theme-dark";
+import themeDarkRTL from "assets/theme-dark/theme-rtl";
 
 // RTL plugins
 import rtlPlugin from "stylis-plugin-rtl";
@@ -29,16 +29,15 @@ import createCache from "@emotion/cache";
 import routes from "routes";
 
 // CoreUI Dashboard 2 MUI contexts
-import { useCoreUIController, setMiniSidenav, setOpenConfigurator } from "./cores/contexts";
+import { useCoreUIController, setMiniSidenav, setOpenConfigurator } from "cores/contexts";
 
 // Images
-import brand from "./assets/images/logo-ct.png";
-import brandDark from "./assets/images/logo-ct-dark.png";
+import brand from "assets/images/logo-ct.png";
+import brandDark from "assets/images/logo-ct-dark.png";
 
 // Icon Fonts
-import "./assets/css/nucleo-icons.css";
-import "./assets/css/nucleo-svg.css";
-
+import "assets/css/nucleo-icons.css";
+import "assets/css/nucleo-svg.css";
 
 export default function App() {
   const [controller, dispatch] = useCoreUIController();
@@ -101,7 +100,7 @@ export default function App() {
     });
 
   const configsButton = (
-    <ArgonBox
+    <CoreUIBox
       display="flex"
       justifyContent="center"
       alignItems="center"
@@ -121,7 +120,7 @@ export default function App() {
       <Icon fontSize="default" color="inherit">
         settings
       </Icon>
-    </ArgonBox>
+    </CoreUIBox>
   );
 
   return direction === "rtl" ? (
@@ -133,7 +132,7 @@ export default function App() {
             <Sidenav
               color={sidenavColor}
               brand={darkSidenav || darkMode ? brand : brandDark}
-              brandName="Argon Dashboard 2 PRO"
+              brandName="CoreUI Dashboard 2 PRO"
               routes={routes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
@@ -157,7 +156,7 @@ export default function App() {
           <Sidenav
             color={sidenavColor}
             brand={darkSidenav || darkMode ? brand : brandDark}
-            brandName="Argon Dashboard 2 PRO"
+            brandName="CoreUI Dashboard 2 PRO"
             routes={routes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}

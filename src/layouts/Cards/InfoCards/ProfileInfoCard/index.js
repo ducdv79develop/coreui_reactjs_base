@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // react-routers components
 import { Link } from "react-router-dom";
 
@@ -26,8 +11,8 @@ import Tooltip from "@mui/material/Tooltip";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../../../components/ArgonBox";
-import ArgonTypography from "../../../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 // CoreUI Dashboard 2 MUI base styles
 import colors from "assets/theme/base/colors";
@@ -56,19 +41,19 @@ function ProfileInfoCard({ title, description, info, social, action }) {
 
   // Render the card info items
   const renderItems = labels.map((label, key) => (
-    <ArgonBox key={label} display="flex" py={1} pr={2}>
-      <ArgonTypography variant="button" fontWeight="bold" textTransform="capitalize">
+    <CoreUIBox key={label} display="flex" py={1} pr={2}>
+      <CoreUITypography variant="button" fontWeight="bold" textTransform="capitalize">
         {label}: &nbsp;
-      </ArgonTypography>
-      <ArgonTypography variant="button" fontWeight="regular" color="text">
+      </CoreUITypography>
+      <CoreUITypography variant="button" fontWeight="regular" color="text">
         &nbsp;{values[key]}
-      </ArgonTypography>
-    </ArgonBox>
+      </CoreUITypography>
+    </CoreUIBox>
   ));
 
   // Render the card social media icons
   const renderSocial = social.map(({ link, icon, color }) => (
-    <ArgonBox
+    <CoreUIBox
       key={color}
       component="a"
       href={link}
@@ -81,40 +66,40 @@ function ProfileInfoCard({ title, description, info, social, action }) {
       lineHeight={1}
     >
       {icon}
-    </ArgonBox>
+    </CoreUIBox>
   ));
 
   return (
     <Card sx={{ height: "100%" }}>
-      <ArgonBox display="flex" justifyContent="space-between" alignItems="center" pt={2} px={2}>
-        <ArgonTypography variant="h6" fontWeight="medium" textTransform="capitalize">
+      <CoreUIBox display="flex" justifyContent="space-between" alignItems="center" pt={2} px={2}>
+        <CoreUITypography variant="h6" fontWeight="medium" textTransform="capitalize">
           {title}
-        </ArgonTypography>
-        <ArgonTypography component={Link} to={action.route} variant="body2" color="secondary">
+        </CoreUITypography>
+        <CoreUITypography component={Link} to={action.route} variant="body2" color="secondary">
           <Tooltip title={action.tooltip} placement="top">
             <Icon>edit</Icon>
           </Tooltip>
-        </ArgonTypography>
-      </ArgonBox>
-      <ArgonBox p={2}>
-        <ArgonBox mb={2} lineHeight={1}>
-          <ArgonTypography variant="button" color="text" fontWeight="regular">
+        </CoreUITypography>
+      </CoreUIBox>
+      <CoreUIBox p={2}>
+        <CoreUIBox mb={2} lineHeight={1}>
+          <CoreUITypography variant="button" color="text" fontWeight="regular">
             {description}
-          </ArgonTypography>
-        </ArgonBox>
-        <ArgonBox opacity={0.3}>
+          </CoreUITypography>
+        </CoreUIBox>
+        <CoreUIBox opacity={0.3}>
           <Divider />
-        </ArgonBox>
-        <ArgonBox>
+        </CoreUIBox>
+        <CoreUIBox>
           {renderItems}
-          <ArgonBox display="flex" py={1} pr={2}>
-            <ArgonTypography variant="button" fontWeight="bold" textTransform="capitalize">
+          <CoreUIBox display="flex" py={1} pr={2}>
+            <CoreUITypography variant="button" fontWeight="bold" textTransform="capitalize">
               social: &nbsp;
-            </ArgonTypography>
+            </CoreUITypography>
             {renderSocial}
-          </ArgonBox>
-        </ArgonBox>
-      </ArgonBox>
+          </CoreUIBox>
+        </CoreUIBox>
+      </CoreUIBox>
     </Card>
   );
 }

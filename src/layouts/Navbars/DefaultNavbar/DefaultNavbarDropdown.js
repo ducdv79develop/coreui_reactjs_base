@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
@@ -24,8 +9,8 @@ import Collapse from "@mui/material/Collapse";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 function DefaultNavbarDropdown({
   name,
@@ -52,7 +37,7 @@ function DefaultNavbarDropdown({
 
   return (
     <>
-      <ArgonBox
+      <CoreUIBox
         {...rest}
         mx={0.5}
         p={1}
@@ -64,16 +49,16 @@ function DefaultNavbarDropdown({
         {...(href && linkComponent)}
       >
         {icon && (
-          <ArgonTypography
+          <CoreUITypography
             variant="body2"
             lineHeight={1}
             color="inherit"
             sx={{ alignSelf: "center", "& *": { verticalAlign: "middle" } }}
           >
             {icon}
-          </ArgonTypography>
+          </CoreUITypography>
         )}
-        <ArgonTypography
+        <CoreUITypography
           variant="button"
           fontWeight="regular"
           textTransform="capitalize"
@@ -81,13 +66,13 @@ function DefaultNavbarDropdown({
           sx={{ fontWeight: "100%", ml: 1, mr: 0.25 }}
         >
           {name}
-        </ArgonTypography>
-        <ArgonTypography variant="body2" color={light ? "white" : "dark"} ml="auto">
+        </CoreUITypography>
+        <CoreUITypography variant="body2" color={light ? "white" : "dark"} ml="auto">
           <Icon sx={{ fontWeight: "normal", verticalAlign: "middle" }}>
             {collapse && "keyboard_arrow_down"}
           </Icon>
-        </ArgonTypography>
-      </ArgonBox>
+        </CoreUITypography>
+      </CoreUIBox>
       {children && (
         <Collapse in={Boolean(collapseStatus)} timeout={400} unmountOnExit>
           {children}

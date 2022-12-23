@@ -1,20 +1,5 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // CoreUI Dashboard 2 MUI components
-import ArgonTypography from "./components/ArgonTypography";
+import CoreUITypography from "components/CoreUITypography";
 
 const categoriesListData = [
   {
@@ -24,9 +9,9 @@ const categoriesListData = [
     description: (
       <>
         250 in stock,{" "}
-        <ArgonTypography variant="caption" color="text" fontWeight="medium">
+        <CoreUITypography variant="caption" color="text" fontWeight="medium">
           346+ sold
-        </ArgonTypography>
+        </CoreUITypography>
       </>
     ),
     route: "/",
@@ -38,9 +23,9 @@ const categoriesListData = [
     description: (
       <>
         123 closed,{" "}
-        <ArgonTypography variant="caption" color="text" fontWeight="medium">
+        <CoreUITypography variant="caption" color="text" fontWeight="medium">
           15 open
-        </ArgonTypography>
+        </CoreUITypography>
       </>
     ),
     route: "/",
@@ -52,9 +37,9 @@ const categoriesListData = [
     description: (
       <>
         1 is active,{" "}
-        <ArgonTypography variant="caption" color="text" fontWeight="medium">
+        <CoreUITypography variant="caption" color="text" fontWeight="medium">
           40 closed
-        </ArgonTypography>
+        </CoreUITypography>
       </>
     ),
     route: "/",
@@ -65,9 +50,9 @@ const categoriesListData = [
     name: "Happy Users",
     description: (
       <>
-        <ArgonTypography variant="caption" color="text" fontWeight="medium">
+        <CoreUITypography variant="caption" color="text" fontWeight="medium">
           +&nbsp;430
-        </ArgonTypography>
+        </CoreUITypography>
       </>
     ),
     route: "/",

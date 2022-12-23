@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // react-routers components
 import { Link } from "react-router-dom";
 
@@ -23,37 +8,37 @@ import PropTypes from "prop-types";
 import Card from "@mui/material/Card";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
-import ArgonAvatar from "../../components/ArgonAvatar";
-import ArgonButton from "../../components/ArgonButton";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
+import CoreUIAvatar from "components/CoreUIAvatar";
+import CoreUIButton from "components/CoreUIButton";
 
 function ProfilesList({ title, profiles }) {
   const renderProfiles = profiles.map(({ image, name, description, action }) => (
-    <ArgonBox key={name} component="li" display="flex" alignItems="center" py={1} mb={1}>
-      <ArgonBox mr={2}>
-        <ArgonAvatar src={image} alt="something here" variant="rounded" shadow="md" />
-      </ArgonBox>
-      <ArgonBox
+    <CoreUIBox key={name} component="li" display="flex" alignItems="center" py={1} mb={1}>
+      <CoreUIBox mr={2}>
+        <CoreUIAvatar src={image} alt="something here" variant="rounded" shadow="md" />
+      </CoreUIBox>
+      <CoreUIBox
         display="flex"
         flexDirection="column"
         alignItems="flex-start"
         justifyContent="center"
       >
-        <ArgonTypography variant="button" fontWeight="medium">
+        <CoreUITypography variant="button" fontWeight="medium">
           {name}
-        </ArgonTypography>
-        <ArgonTypography variant="caption" color="text">
+        </CoreUITypography>
+        <CoreUITypography variant="caption" color="text">
           {description}
-        </ArgonTypography>
-      </ArgonBox>
-      <ArgonBox ml="auto">
+        </CoreUITypography>
+      </CoreUIBox>
+      <CoreUIBox ml="auto">
         {action.type === "internal" ? (
-          <ArgonButton component={Link} to={action.route} variant="text" color="info">
+          <CoreUIButton component={Link} to={action.route} variant="text" color="info">
             {action.label}
-          </ArgonButton>
+          </CoreUIButton>
         ) : (
-          <ArgonButton
+          <CoreUIButton
             component="a"
             href={action.route}
             target="_blank"
@@ -62,24 +47,24 @@ function ProfilesList({ title, profiles }) {
             color={action.color}
           >
             {action.label}
-          </ArgonButton>
+          </CoreUIButton>
         )}
-      </ArgonBox>
-    </ArgonBox>
+      </CoreUIBox>
+    </CoreUIBox>
   ));
 
   return (
     <Card sx={{ height: "100%" }}>
-      <ArgonBox pt={2} px={2}>
-        <ArgonTypography variant="h6" fontWeight="medium" textTransform="capitalize">
+      <CoreUIBox pt={2} px={2}>
+        <CoreUITypography variant="h6" fontWeight="medium" textTransform="capitalize">
           {title}
-        </ArgonTypography>
-      </ArgonBox>
-      <ArgonBox p={2}>
-        <ArgonBox component="ul" display="flex" flexDirection="column" p={0} m={0}>
+        </CoreUITypography>
+      </CoreUIBox>
+      <CoreUIBox p={2}>
+        <CoreUIBox component="ul" display="flex" flexDirection="column" p={0} m={0}>
           {renderProfiles}
-        </ArgonBox>
-      </ArgonBox>
+        </CoreUIBox>
+      </CoreUIBox>
     </Card>
   );
 }

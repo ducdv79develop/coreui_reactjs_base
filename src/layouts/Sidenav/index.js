@@ -13,19 +13,19 @@ import Link from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 // CoreUI Dashboard 2 MUI example components
-import SidenavItem from "./SidenavItem";
-import SidenavFooter from "./SidenavFooter";
+import SidenavItem from "layouts/Sidenav/SidenavItem";
+import SidenavFooter from "layouts/Sidenav/SidenavFooter";
 
 // Custom styles for the Sidenav
-import SidenavRoot from "./SidenavRoot";
-import sidenavLogoLabel from "./styles/sidenav";
+import SidenavRoot from "layouts/Sidenav/SidenavRoot";
+import sidenavLogoLabel from "layouts/Sidenav/styles/sidenav";
 
 // CoreUI Dashboard 2 MUI context
-import { useCoreUIController, setMiniSidenav } from "../../cores/contexts";
+import { useCoreUIController, setMiniSidenav } from "cores/contexts";
 
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
   const [controller, dispatch] = useCoreUIController();
@@ -55,7 +55,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
   }, [dispatch, location]);
 
   // Render all the routes from the routes.js (All the visible items on the Sidenav)
-  const renderRoutes = routes.map(({ type, name, icon, title, key, href, route }) => {
+  const renderRoutes = routes.map(({ type, name, icon, title, key, href, route, noCollapse }) => {
     let returnValue;
 
     if (type === "route") {
@@ -79,7 +79,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
       }
     } else if (type === "title") {
       returnValue = (
-        <ArgonTypography
+        <CoreUITypography
           key={key}
           color={darkSidenav ? "white" : "dark"}
           display="block"
@@ -93,7 +93,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
           ml={1}
         >
           {title}
-        </ArgonTypography>
+        </CoreUITypography>
       );
     } else if (type === "divider") {
       returnValue = <Divider key={key} light={darkSidenav} />;
@@ -104,8 +104,8 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
 
   return (
     <SidenavRoot {...rest} variant="permanent" ownerState={{ darkSidenav, miniSidenav, layout }}>
-      <ArgonBox pt={3} pb={1} px={4} textAlign="center">
-        <ArgonBox
+      <CoreUIBox pt={3} pb={1} px={4} textAlign="center">
+        <CoreUIBox
           display={{ xs: "block", xl: "none" }}
           position="absolute"
           top={0}
@@ -114,35 +114,35 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
           onClick={closeSidenav}
           sx={{ cursor: "pointer" }}
         >
-          <ArgonTypography variant="h6" color="secondary">
+          <CoreUITypography variant="h6" color="secondary">
             <Icon sx={{ fontWeight: "bold" }}>close</Icon>
-          </ArgonTypography>
-        </ArgonBox>
-        <ArgonBox component={NavLink} to="/" display="flex" alignItems="center">
+          </CoreUITypography>
+        </CoreUIBox>
+        <CoreUIBox component={NavLink} to="/" display="flex" alignItems="center">
           {brand && (
-            <ArgonBox component="img" src={brand} alt="Argon Logo" width="2rem" mr={0.25} />
+            <CoreUIBox component="img" src={brand} alt="CoreUI Logo" width="2rem" mr={0.25} />
           )}
-          <ArgonBox
+          <CoreUIBox
             width={!brandName && "100%"}
             sx={(theme) => sidenavLogoLabel(theme, { miniSidenav })}
           >
-            <ArgonTypography
+            <CoreUITypography
               component="h6"
               variant="button"
               fontWeight="medium"
               color={darkSidenav ? "white" : "dark"}
             >
               {brandName}
-            </ArgonTypography>
-          </ArgonBox>
-        </ArgonBox>
-      </ArgonBox>
+            </CoreUITypography>
+          </CoreUIBox>
+        </CoreUIBox>
+      </CoreUIBox>
       <Divider light={darkSidenav} />
       <List>{renderRoutes}</List>
 
-      <ArgonBox pt={1} mt="auto" mb={2} mx={2}>
+      <CoreUIBox pt={1} mt="auto" mb={2} mx={2}>
         <SidenavFooter />
-      </ArgonBox>
+      </CoreUIBox>
     </SidenavRoot>
   );
 }

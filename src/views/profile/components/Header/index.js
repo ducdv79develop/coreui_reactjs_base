@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState, useEffect } from "react";
 
 // @mui material components
@@ -23,12 +8,12 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "./components/ArgonBox";
-import ArgonTypography from "./components/ArgonTypography";
-import ArgonAvatar from "./components/ArgonAvatar";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
+import CoreUIAvatar from "components/CoreUIAvatar";
 
 // CoreUI Dashboard 2 MUI example components
-import DashboardNavbar from "./layouts/Navbars/DashboardNavbar";
+import DashboardNavbar from "layouts/Navbars/DashboardNavbar";
 
 // CoreUI Dashboard 2 MUI base styles
 import breakpoints from "assets/theme/base/breakpoints";
@@ -63,9 +48,9 @@ function Header() {
   const handleSetTabValue = (event, newValue) => setTabValue(newValue);
 
   return (
-    <ArgonBox position="relative">
+    <CoreUIBox position="relative">
       <DashboardNavbar absolute light />
-      <ArgonBox height="220px" />
+      <CoreUIBox height="220px" />
       <Card
         sx={{
           py: 2,
@@ -75,7 +60,7 @@ function Header() {
       >
         <Grid container spacing={3} alignItems="center">
           <Grid item>
-            <ArgonAvatar
+            <CoreUIAvatar
               src={burceMars}
               alt="profile-image"
               variant="rounded"
@@ -84,14 +69,14 @@ function Header() {
             />
           </Grid>
           <Grid item>
-            <ArgonBox height="100%" mt={0.5} lineHeight={1}>
-              <ArgonTypography variant="h5" fontWeight="medium">
+            <CoreUIBox height="100%" mt={0.5} lineHeight={1}>
+              <CoreUITypography variant="h5" fontWeight="medium">
                 Alex Thompson
-              </ArgonTypography>
-              <ArgonTypography variant="button" color="text" fontWeight="medium">
+              </CoreUITypography>
+              <CoreUITypography variant="button" color="text" fontWeight="medium">
                 CEO / Co-Founder
-              </ArgonTypography>
-            </ArgonBox>
+              </CoreUITypography>
+            </CoreUIBox>
           </Grid>
           <Grid item xs={12} md={6} lg={4} sx={{ ml: "auto" }}>
             <AppBar position="static">
@@ -125,7 +110,7 @@ function Header() {
           </Grid>
         </Grid>
       </Card>
-    </ArgonBox>
+    </CoreUIBox>
   );
 }
 

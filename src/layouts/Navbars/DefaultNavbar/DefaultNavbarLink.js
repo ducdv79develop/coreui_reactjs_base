@@ -3,7 +3,7 @@
 * Material Dashboard 2 PRO React - v2.1.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
+* Product Page: https://www.creative-tim.com/product/CoreUI-dashboard-material-ui
 * Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
@@ -23,12 +23,12 @@ import PropTypes from "prop-types";
 import Icon from "@mui/material/Icon";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 function DefaultNavbarLink({ icon, name, route, light }) {
   return (
-    <ArgonBox
+    <CoreUIBox
       component={Link}
       to={route}
       mx={1}
@@ -45,7 +45,7 @@ function DefaultNavbarLink({ icon, name, route, light }) {
       >
         {icon}
       </Icon>
-      <ArgonTypography
+      <CoreUITypography
         variant="button"
         fontWeight="regular"
         color={light ? "white" : "dark"}
@@ -53,8 +53,8 @@ function DefaultNavbarLink({ icon, name, route, light }) {
         sx={{ width: "100%", lineHeight: 0 }}
       >
         &nbsp;{name}
-      </ArgonTypography>
-    </ArgonBox>
+      </CoreUITypography>
+    </CoreUIBox>
   );
 }
 

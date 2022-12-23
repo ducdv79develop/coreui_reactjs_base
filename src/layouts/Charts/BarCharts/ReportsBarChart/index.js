@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Argon Dashboard 2 MUI - v3.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useMemo } from "react";
 
 // porp-types is a library for typechecking of props
@@ -26,14 +11,14 @@ import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 
 // CoreUI Dashboard 2 MUI components
-import ArgonBox from "../../components/ArgonBox";
-import ArgonTypography from "../../components/ArgonTypography";
+import CoreUIBox from "components/CoreUIBox";
+import CoreUITypography from "components/CoreUITypography";
 
 // CoreUI Dashboard 2 MUI example components
-import BarReportsChartItem from "./layouts/Charts/BarCharts/ReportsBarChart/ReportsBarChartItem";
+import BarReportsChartItem from "layouts/Charts/BarCharts/ReportsBarChart/ReportsBarChartItem";
 
 // ReportsBarChart configurations
-import configs from "./layouts/Charts/BarCharts/ReportsBarChart/configs";
+import configs from "layouts/Charts/BarCharts/ReportsBarChart/configs";
 
 function ReportsBarChart({ color, title, description, chart, items }) {
   const { data, options } = configs(chart.labels || [], chart.datasets || {});
@@ -51,10 +36,10 @@ function ReportsBarChart({ color, title, description, chart, items }) {
 
   return (
     <Card sx={{ height: "100%" }}>
-      <ArgonBox padding="1rem">
+      <CoreUIBox padding="1rem">
         {useMemo(
           () => (
-            <ArgonBox
+            <CoreUIBox
               variant="gradient"
               bgColor={color}
               borderRadius="lg"
@@ -64,26 +49,26 @@ function ReportsBarChart({ color, title, description, chart, items }) {
               height="12.5rem"
             >
               <Bar data={data} options={options} />
-            </ArgonBox>
+            </CoreUIBox>
           ),
           [chart, color]
         )}
-        <ArgonBox px={1}>
-          <ArgonBox mb={2}>
-            <ArgonTypography variant="h6" fontWeight="medium" textTransform="capitalize">
+        <CoreUIBox px={1}>
+          <CoreUIBox mb={2}>
+            <CoreUITypography variant="h6" fontWeight="medium" textTransform="capitalize">
               {title}
-            </ArgonTypography>
-            <ArgonTypography component="div" variant="button" color="text" fontWeight="regular">
+            </CoreUITypography>
+            <CoreUITypography component="div" variant="button" color="text" fontWeight="regular">
               {description}
-            </ArgonTypography>
-          </ArgonBox>
-          <ArgonBox py={1} px={0.5}>
+            </CoreUITypography>
+          </CoreUIBox>
+          <CoreUIBox py={1} px={0.5}>
             <Grid container spacing={2}>
               {renderItems}
             </Grid>
-          </ArgonBox>
-        </ArgonBox>
-      </ArgonBox>
+          </CoreUIBox>
+        </CoreUIBox>
+      </CoreUIBox>
     </Card>
   );
 }
