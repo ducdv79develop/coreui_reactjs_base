@@ -10,7 +10,7 @@ import colors from "assets/theme-dark/base/colors";
 // CoreUI Dashboard 2 MUI Helper Functions
 import boxShadow from "assets/theme-dark/functions/boxShadow";
 
-const { black, white, info, tabs, dark, text } = colors;
+const { black, info, dark } = colors;
 
 const boxShadows = {
   xs: boxShadow([0, 2], [9, -5], black.main, 0.15),

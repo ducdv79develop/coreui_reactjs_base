@@ -27,12 +27,12 @@ import gradientLineChartData from "views/dashboard/data/gradientLineChartData";
 import salesTableData from "views/dashboard/data/salesTableData";
 import categoriesListData from "views/dashboard/data/categoriesListData";
 
-function Default() {
+function Dashboard() {
   const { size } = typography;
   return (
     <DashboardLayout>
-      <DashboardNavbar />
-      <CoreUIBox py={3}>
+      {/* <DashboardNavbar /> */}
+      {/* <CoreUIBox py={3}>
         <Grid container spacing={3} mb={3}>
           <Grid item xs={12} md={6} lg={3}>
             <DetailedStatisticsCard
@@ -99,10 +99,10 @@ function Default() {
             <CategoriesList title="categories" categories={categoriesListData} />
           </Grid>
         </Grid>
-      </CoreUIBox>
+      </CoreUIBox> */}
       <Footer />
     </DashboardLayout>
   );
 }
 
-export default Default;
+export default Dashboard;

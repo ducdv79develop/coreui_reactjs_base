@@ -2,7 +2,6 @@
 import PropTypes from "prop-types";
 
 // @mui material components
-import Collapse from "@mui/material/Collapse";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
