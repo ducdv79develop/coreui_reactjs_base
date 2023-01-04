@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, Route, Navigate } from "react-router-dom";
+import { useLocation, Route, Navigate, Routes } from "react-router-dom";
 // reactstrap components
 import { Container, Row, Col } from "reactstrap";
 
@@ -30,7 +30,7 @@ const AuthLayout = (props) => {
       if (prop.layout === "/auth") {
         return (
           <Route
-            path={prop.layout + prop.path}
+            path={prop.path}
             element={prop.element}
             key={key}
           />
@@ -78,10 +78,10 @@ const AuthLayout = (props) => {
         {/* Page content */}
         <Container className="mt--8 pb-5">
           <Row className="justify-content-center">
-            <Route>
+            <Routes>
               {getRoutes(routes)}
               <Route path="*" element={<Navigate to="/auth/login" replace />} />
-            </Route>
+            </Routes>
           </Row>
         </Container>
       </div>
