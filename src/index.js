@@ -1,28 +1,19 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-// import App
+
+import reportWebVitals from "reportWebVitals";
+import "assets/plugins/nucleo/css/nucleo.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "assets/scss/argon-dashboard-react.scss";
+
 import App from "App";
 
-// Soft CoreUI Context Provider
-import { CoreUIControllerProvider } from "cores/contexts";
-
-// react-perfect-scrollbar component
-import PerfectScrollbar from "react-perfect-scrollbar";
-import "react-perfect-scrollbar/dist/css/styles.css";
-
-import reportWebVitals from 'reportWebVitals';
-
-const container = document.getElementById("root");
-const root = createRoot(container);
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
-    <CoreUIControllerProvider>
-      <PerfectScrollbar>
-        <App />
-      </PerfectScrollbar>
-    </CoreUIControllerProvider>
+    <App />
   </BrowserRouter>
 );
 

@@ -1,58 +1,60 @@
-import Dashboard from "views/dashboard";
-import Tables from "views/tables";
-import Profile from "views/profile";
-import SignIn from "views/authentication/sign-in";
-import SignUp from "views/authentication/sign-up";
+import Index from "views/Index.js";
+import Profile from "views/examples/Profile.js";
+import Maps from "views/examples/Maps.js";
+import Register from "views/examples/Register.js";
+import Login from "views/examples/Login.js";
+import Tables from "views/examples/Tables.js";
+import Icons from "views/examples/Icons.js";
 
-// CoreUI Dashboard 2 MUI components
-import CoreUIBox from "components/CoreUIBox";
-
-const routes = [
+var routes = [
     {
-        type: "route",
+        path: "/index",
         name: "Dashboard",
-        key: "dashboard",
-        route: "/dashboard",
-        icon: <CoreUIBox component="i" color="primary" fontSize="14px" className="ni ni-tv-2" />,
-        component: <Dashboard />,
+        icon: "ni ni-tv-2 text-primary",
+        component: Index,
+        layout: "/admin"
     },
     {
-        type: "route",
+        path: "/icons",
+        name: "Icons",
+        icon: "ni ni-planet text-blue",
+        component: Icons,
+        layout: "/admin"
+    },
+    {
+        path: "/maps",
+        name: "Maps",
+        icon: "ni ni-pin-3 text-orange",
+        component: Maps,
+        layout: "/admin"
+    },
+    {
+        path: "/user-profile",
+        name: "User Profile",
+        icon: "ni ni-single-02 text-yellow",
+        component: Profile,
+        layout: "/admin"
+    },
+    {
+        path: "/tables",
         name: "Tables",
-        key: "tables",
-        route: "/tables",
-        icon: (
-            <CoreUIBox component="i" color="warning" fontSize="14px" className="ni ni-calendar-grid-58" />
-        ),
-        component: <Tables />,
-    },
-    { type: "title", title: "Account Pages", key: "account-pages" },
-    {
-        type: "route",
-        name: "Profile",
-        key: "profile",
-        route: "/profile",
-        icon: <CoreUIBox component="i" color="dark" fontSize="14px" className="ni ni-single-02" />,
-        component: <Profile />,
+        icon: "ni ni-bullet-list-67 text-red",
+        component: Tables,
+        layout: "/admin"
     },
     {
-        type: "route",
-        name: "Sign In",
-        key: "sign-in",
-        route: "/authentication/sign-in",
-        icon: (
-            <CoreUIBox component="i" color="warning" fontSize="14px" className="ni ni-single-copy-04" />
-        ),
-        component: <SignIn />,
+        path: "/login",
+        name: "Login",
+        icon: "ni ni-key-25 text-info",
+        component: Login,
+        layout: "/auth"
     },
     {
-        type: "route",
-        name: "Sign Up",
-        key: "sign-up",
-        route: "/authentication/sign-up",
-        icon: <CoreUIBox component="i" color="info" fontSize="14px" className="ni ni-collection" />,
-        component: <SignUp />,
-    },
+        path: "/register",
+        name: "Register",
+        icon: "ni ni-circle-08 text-pink",
+        component: Register,
+        layout: "/auth"
+    }
 ];
-
 export default routes;
