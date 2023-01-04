@@ -1,5 +1,5 @@
 
-const Chart = require("chart.js");
+const Chart = require("chart.js/auto");
 //
 // Chart extension for making the bars rounded
 // Code from: https://codepen.io/jedtrow/full/ygRYgo
