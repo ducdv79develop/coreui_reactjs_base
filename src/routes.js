@@ -1,16 +1,18 @@
-import Index from "views/Index.js";
-import Profile from "views/examples/Profile.js";
-import Register from "views/examples/Register.js";
-import Login from "views/examples/Login.js";
-import Tables from "views/examples/Tables.js";
-import Icons from "views/examples/Icons.js";
+import Dashboard from "views/admin/Dashboard.js";
+import Profile from "views/admin/Profile.js";
+import Tables from "views/admin/Tables.js";
+import Icons from "views/admin/Icons.js";
+
+import Register from "views/auth/Register";
+import Login from "views/auth/Login";
+import ForgotPassword from "views/auth/ForgotPassword";
 
 var routes = [
     {
-        path: "/index",
+        path: "/dashboard",
         name: "Dashboard",
         icon: "ni ni-tv-2 text-primary",
-        element: <Index />,
+        element: <Dashboard />,
         layout: "/admin"
     },
     {
@@ -47,6 +49,13 @@ var routes = [
         icon: "ni ni-circle-08 text-pink",
         element: <Register />,
         layout: "/auth"
-    }
+    },
+    {
+        path: "/forgot-password",
+        name: "ForgotPassword",
+        icon: "ni ni-lock-circle-open text-info",
+        element: <ForgotPassword />,
+        layout: "/auth"
+    },
 ];
 export default routes;

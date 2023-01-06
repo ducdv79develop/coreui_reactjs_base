@@ -1,0 +1,8 @@
+.footer-custom {
+    width: 100%;
+    padding-bottom: 15px !important;
+    padding-top: 15px !important;
+}
+.main-content {
+    min-height: 90vh;
+}

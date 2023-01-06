@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 // reactstrap components
 import {
@@ -79,7 +78,7 @@ const AdminNavbar = (props) => {
                   <span>Support</span>
                 </DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
+                <DropdownItem to="/auth/login" tag={Link}>
                   <i className="ni ni-user-run" />
                   <span>Logout</span>
                 </DropdownItem>
