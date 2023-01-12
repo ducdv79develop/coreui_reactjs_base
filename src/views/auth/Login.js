@@ -1,5 +1,8 @@
 // reactstrap components
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Auth from "cores/ApiAuth";
+import { useLocalStorage } from 'hooks/useLocalStorage';
 import {
   Button,
   Card,
@@ -14,7 +17,40 @@ import {
   Col
 } from "reactstrap";
 
+
 const Login = () => {
+  const navigate = useNavigate();
+  const [token, setToken] = useLocalStorage("token", null);
+
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [remember, setRemember] = useState(false)
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const params = {
+      email: email,
+      password: password,
+      remember: remember,
+    }; 
+    Auth.post('login', params)
+      .then((response) => {
+        const responseAPI = response.data;
+        if (responseAPI.status == 200) {
+          setToken(responseAPI.results.token);
+          return navigate('/admin/dashboard');
+        }
+      })
+      .catch((response) => {
+        const responseAPI = response.response.data;
+        console.log(responseAPI)
+      });
+  }
+
+  if (token) {
+    return navigate('/admin/dashboard');
+  }
+
   return (
     <>
       <Col lg="5" md="7">
@@ -75,6 +111,8 @@ const Login = () => {
                   <Input
                     placeholder="Email"
                     type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     autoComplete="new-email"
                   />
                 </InputGroup>
@@ -89,6 +127,8 @@ const Login = () => {
                   <Input
                     placeholder="Password"
                     type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     autoComplete="new-password"
                   />
                 </InputGroup>
@@ -97,6 +137,8 @@ const Login = () => {
                 <input
                   className="custom-control-input"
                   id=" customCheckLogin"
+                  checked={remember}
+                  onChange={(e) => setRemember(e.target.checked)}
                   type="checkbox"
                 />
                 <label
@@ -107,7 +149,7 @@ const Login = () => {
                 </label>
               </div>
               <div className="text-center">
-                <Button className="my-4" color="primary" type="button" to="/admin/dashboard" tag={Link}>
+                <Button className="my-4" color="primary" type="button" onClick={handleSubmit}>
                   Sign in
                 </Button>
               </div>
